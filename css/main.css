@@ -24,8 +24,8 @@ body {
 	overflow: hidden;
 	
 	font-family: "Times New Roman", Times, serif;
-	font-size: 36px;
-	font-weight: 200;
+	font-size: 28px;
+	font-weight: 100;
 	letter-spacing: -0.02em;
 	color: #000;
 
@@ -47,21 +47,17 @@ body {
 .reveal h3, 
 .reveal h4 {
 	margin: 0 0 20px 0;
-	
 	color: #000;
-	
 	font-family: "Times New Roman", Times, serif;
 	line-height: 0.9em;
 	letter-spacing: 0.02em;
-	
 	text-transform: uppercase;
-	
 }
 
-.reveal h1 { font-size: 136px; 	}
-.reveal h2 { font-size: 76px;	}
-.reveal h3 { font-size: 56px;	}
-.reveal h4 { font-size: 36px;	}
+.reveal h1 { font-size: 112px; 	}
+.reveal h2 { font-size: 60px;	}
+.reveal h3 { font-size: 48px;	}
+.reveal h4 { font-size: 28px;	}
 
 .reveal h1.inverted,
 .reveal h2.inverted,
@@ -366,12 +362,12 @@ body {
 
 .reveal .slides {
 	position: absolute;
-	width: 1000px;
-	height: 650px;
+	width: 900px;
+	height: 600px;
 	
 	left: 50%;
 	top: 50%;
-	margin-left: -550px;
+	margin-left: -500px;
 	margin-top: -350px;
 	
 	text-align: center;
@@ -392,7 +388,6 @@ body {
  	    -ms-perspective-origin: 50% 25%;
  	        perspective-origin: 50% 25%;
 
-	
 }
 
 .reveal .slides>section,
@@ -404,8 +399,8 @@ body {
 	height: 100% !important;
     z-index: 10;
 	background: white;
-	padding: 50px;
-	padding-bottom: 0px;
+	margin: 50px;
+	margin-bottom: 0px;
 	
 	-webkit-transform-style: preserve-3d;
 	   -moz-transform-style: preserve-3d;
@@ -425,8 +420,14 @@ body {
 	background-image: url("../img/html5logo.png"), url("../img/PegaLogo.png");
 	background-origin: padding-box, padding-box, padding-box;
 	background-repeat: no-repeat;
-	background-position-y: 620px, 620px;
-	background-position-x: 25px, 1000px;			
+	background-position-y: 520px, 520px;
+	background-position-x: 25px, 800px;
+
+	border-radius: 0px 15px 0px 15px; 
+	-moz-border-radius: 0px 15px 0px 15px; 
+	-webkit-border-radius: 0px 15px 0px 15px;
+box-shadow: 5px 5px 5px #888888;	
+	
 }
 
 .reveal .slides>section.present {
@@ -848,10 +849,10 @@ body {
  *********************************************/
 
 .reveal.overview .slides {
-	-webkit-perspective: 700px;
-	   -moz-perspective: 700px;
-	    -ms-perspective: 700px;
-	        perspective: 700px;
+	-webkit-perspective: 600px;
+	   -moz-perspective: 600px;
+	    -ms-perspective: 600px;
+	        perspective: 600px;
 }
 
 .reveal.overview .slides section {
@@ -938,12 +939,14 @@ body {
 .reveal aside.notes {
 	display: none;
 }
+ul li {
+	list-style: none;
+}
 ul > li::before {	
 	content: url("../img/blue100.gif");
 	width: 0.9em;
 	position: absolute;
-	margin-top: -2px;
-	margin-left: -35px;
+	margin-left: -40px;
 }
 .features li::before {
 	position: absolute;
@@ -982,25 +985,28 @@ ul > li::before {
 	height: 100% !important;
 	left: 0;
 	top: 0;
-	margin-left: 0px;
-	margin-top: 0px;
 	padding: 0px;
-
 	background-image: none;	
 }
 
 .reveal section.fullPage img {
 	width: 100% !important;
 	height: 100% !important;
-	margin-left : -4px;
-	margin-top : -4px;
+	margin: 0px 0px 0px 0px !important;	
 }
 
 .reveal section .sectionDiv img {
-	border: none !impo;
+	border: none !important;
 	background: white;
 }
 
-.reveal section .sectionDiv ul {
+
+
+.reveal section .sectionDiv ul{
 	text-align: left;
+	margin: 20px;
+}
+
+.reveal section .sectionDiv {
+	margin: 20px;
 }
