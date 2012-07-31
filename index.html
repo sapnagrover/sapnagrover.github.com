@@ -6,18 +6,9 @@
 		
 		<title>7.1 UI -HTML5 Presentation</title>
 
-		<meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
-		<meta name="author" content="Hakim El Hattab">
-
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-		
 		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
-
-		<link rel="stylesheet" href="lib/css/zenburn.css">
 	</head>
 	
 	<body>
@@ -29,22 +20,12 @@
 			
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-			<section>
-				<h2>Goal 4:  End-user UI is generated using HTML5 doc type</h2>
-				
-					<img src="img/goal.jpg"/>
-				
-				
-				<!--
-				<script>
-					// Delicously hacky. Look away.
-					var message = navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ? 'Tap to navigate' : 'Navigate via keyboard';
-					document.write( '<p style="color: rgba(0,0,0,0.1); text-shadow: none;">('+message+')</p>' );
-				</script>
-				-->
-			</section>
 			<section class="fullPage">
-					<img src="img/HTML5.png" width="790px"/>
+				<img style="border: none;"  src="img/html5.png"/>
+			</section>			
+			<section class="fullPage">
+				<div style="position:absolute; left: 40px; top:500px; font-weight:bold; color: white;">Goal 4:  End-user UI is generated using HTML5 doc type</div>
+				<img style=";border: none;" src="img/html5.png"/>
 			</section>
 			<section>
 				<h2>Why HTML5</h2>
@@ -77,31 +58,76 @@
 				</div>
 			</section>
 			<section class="fullPage">
-					<img src="img/HTML5Future.png" width="790px"/>
-			</section>
-			<section>
-				<h2>Lately</h2>
-				<div class="sectionDiv">
-					<ul>
-						<li>With the efforts of standards advocacy groups, browsers have been moving toward a more consistent support of the web standards.</li>
-						<li>And this is handled by introducing the Doctype switch!</li>
-					</ul>	
-				</div>
+					<img style=";border: none;" src="img/HTML5Future.png"/>
 			</section>
 
-			<section>
-				<h2>In Progress</h2>
-				<div class="sectionDiv">
-					
-				</div>
-			</section>
 			
 			<section>
 				<h2> HTML5 features</h2>
 				<div class="sectionDiv">
-					<img src="img/html5features.png" width="790px"/>
+					<ul class="featureList">
+						<li>Offline / Storage<img src="img/HTML5_Offline_Storage_32.png"></li>
+						<li>Realtime / Communication<img src="img/HTML5_Connectivity_32.png"></li>
+						<li>File / Hardware Access<img src="img/HTML5_Device_Access_32.png"></li>
+						<li>Semantics &amp; Markup<img src="img/HTML5_Semantics_32.png"></li>
+						<li>Graphics / Multimedia<img src="img/HTML5_3D_Effects_32.png"></li>
+						<li>CSS3<img src="img/HTML5_Styling_32.png"></li>
+						<li>Nuts &amp; Bolts<img src="img/HTML5_Performance_32.png"></li>
+					</ul>					
 				</div>	
 			</section>
+			<section class="fullPage">
+					<img style=";border: none;" src="img/html5semantics.jpg"/>
+			</section>
+			<section>
+				<h2>HTML5 features - Semantics & Markup</h2>
+				<div style="text-align: left; margin-left: 60px;" class="sectionDiv">
+
+					  <div style="text-align: left; margin-bottom: 10px;">Color Picker: <input type="color" name="favcolor" /></div>
+					  <div style="text-align: left; margin-bottom: 10px;">Date Picker : <input type="date" name="bday" /></div>
+					  <div style="text-align: left; margin-bottom: 10px;">Number (between 1 and 5): <input type="number" name="quantity" min="1" max="5" /></div>
+					 <div style="text-align: left; margin-bottom: 10px;"> <form action="">
+					  E-mail: <input type="email" name="usremail" />
+					  <input type="submit" />
+					</form></div>
+					 <div style="text-align: left; margin-bottom: 10px;"> <form action="">
+					  Required field: <input type="text (or other)" required name="some-name"/>
+					  <input type="submit" />
+					</form></div>					
+					Progress bar : <progress value="75" max="100"><span class="pln">3/4 complete</span></progress>
+
+				</div>
+			</section>			
+			<section class="fullPage">
+					<img style=";border: none;" src="img/html5css3.jpg"/>
+			</section>
+			<section>
+				<h2> HTML5 features - CSS3</h2>
+				<div class="sectionDiv">
+						<div  style="text-align: left; margin-bottom: 10px;">Gradients :</div>
+						<div style="text-align: left;font-size: 16px;color: #C61800;text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;">
+						background: -webkit-gradient(linear, left top, left bottom, 
+                             from(#00abeb), to(white), 
+                             color-stop(0.5, white), color-stop(0.5, #66cc00))
+						</div>
+				<div id="gradients-linear-example" class="example"></div>
+						
+				</div>	
+			</section>
+			<section>
+				<h2> HTML5 features - CSS3</h2>
+				<div class="sectionDiv">
+						<div  style="text-align: left; margin-bottom: 10px;">Rounded Corners :</div>
+						<div style="text-align: left;font-size: 16px;color: #C61800;text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;">
+							border-radius: 50px 50px 50px 50px; <br>
+							-moz-border-radius: 50px 50px 50px 50px; <br>
+							-webkit-border-radius: 50px 50px 50px 50px; <br>
+							border: 1px solid #800000;
+						</div>
+				<div id="rounded-example" class="example"></div>
+						
+				</div>	
+			</section>				
 			<section>
 				<h2>How?</h2>
 				<div class="sectionDiv">
@@ -114,7 +140,12 @@
 					
 				</div>
 			</section>
-			
+			<section>
+				<h2>In Progress</h2>
+				<div class="sectionDiv">
+					
+				</div>
+			</section>			
 			<section>
 				<h2>Pending</h2>
 				<div class="sectionDiv">
@@ -125,16 +156,14 @@
 			<section>
 				<h2>Teams</h2>
 				<div class="sectionDiv">
-					<ul>
-						<li>Nimbus</li>
-						<li>Webwiz</li>
-					</ul>
+					<img style=";border: none;" src="img/nimbus.png"/>
+					<img style=";border: none;" src="img/webwiz.png"/>
 				</div>
 			</section>
 			
 			<section>
-				<h1>Thank You</h1>
-				<br><br><br><br><br><br>
+				<h1 style="margin-top:70px">Thank You</h1>
+				<br><br><br><br>
 				<h3 class="inverted"> By Sapna Grover</h3>
 			</section>
 			</div>
@@ -183,7 +212,7 @@
 					history: true,
 					
 					theme: query.theme || 'neon', // default/neon/beige
-					transition: 'concave'  // default/cube/page/concave/linear(2d)
+					transition: 'default'  // default/cube/page/concave/linear(2d)
 				});
 
 			} );
