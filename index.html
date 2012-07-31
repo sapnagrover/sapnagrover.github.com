@@ -1,69 +1,205 @@
-<!DOCTYPE html>
-<html>
+ <!doctype html>  
+<html lang="en">
+  
+	<head>
+		<meta charset="utf-8">
+		
+		<title>7.1 Goal -HTML5 Presentation</title>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="HTML5 : " />
+		<meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
+		<meta name="author" content="Sapna Grover">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="stylesheets/main.css">
+		<link rel="stylesheet" href="stylesheets/print.css" type="text/css" media="print">
 
-    <title>HTML5</title>
-  </head>
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
 
-  <body>
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			<section>
+				<h2>Goal 4:  End-user UI is generated using HTML5 doc type</h2>
+				
+					<img src="img/goal.jpg"/>
+				
+				
+				<!--
+				<script>
+					// Delicously hacky. Look away.
+					var message = navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ? 'Tap to navigate' : 'Navigate via keyboard';
+					document.write( '<p style="color: rgba(0,0,0,0.1); text-shadow: none;">('+message+')</p>' );
+				</script>
+				-->
+			</section>
+			<section class="fullPage">
+					<img src="img/html5.png" width="790px"/>
+			</section>
+			<section>
+				<h2>Why HTML5</h2>
+				<div class="sectionDiv">
+					<ul>
+						<li>30% faster 
+							<ul>
+								<li><a href="http://www.neowin.net/news/microsoft-sites-using-ie-10-and-html5-load-30-percent-faster"> Microsoft: Sites using IE 10 and HTML5 load 30 percent faster </a></li> 
+								<li><a href="http://www.ditii.com/2012/04/26/flickr-html5-drag-drop-uploadr-faster-upto-30-file-size-limits-launched/">
+								Flickr New HTML5 Drag-n-Drop Uploadr -Faster Upto 30%
+								</a>
+								</li>
+							</ul>
+						</li>
+						<li>Works on iPhone, iPad, Android - <a href="http://www.html5rocks.com/en/mobile">HTML5 features are already supported on modern mobile browse</a></li>
+						<li>Built on open web standards -<a href="http://www.html5rocks.com/en/tutorials/speed/quick/">Best practices for faster Web app with HTML5</a></li>
+					</ul>	
+				</div>
+			</section>
+	
+			<section>
+				<h2>Why HTML5</h2>
+				<div class="sectionDiv">
+					<ul>
+						<li>When Netscape 4 and IE 4 implemented CSS, their support did not match the W3C standard (or, indeed, each other).</li> 
+						<li>Netscape 4 had horribly broken support.</li>
+						<li>The result is one browser may interpret a CSS property or HTML tag one way while another may have a slightly or even largely varied implementation.</li>
+						<li>And Web designers have long been plagued by the support (or lack thereof) of standards in the browser.</li>
+					</ul>	
+				</div>
+			</section>
+			<section class="fullPage">
+					<img src="img/HTML5Future.png" width="790px"/>
+			</section>
+			<section>
+				<h2>Lately</h2>
+				<div class="sectionDiv">
+					<ul>
+						<li>With the efforts of standards advocacy groups, browsers have been moving toward a more consistent support of the web standards.</li>
+						<li>And this is handled by introducing the Doctype switch!</li>
+					</ul>	
+				</div>
+			</section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/sapnagrover">View on GitHub</a>
+			<section>
+				<h2>In Progress</h2>
+				<div class="sectionDiv">
+					
+				</div>
+			</section>
+			
+			<section>
+				<h2> HTML5 features</h2>
+				<div class="sectionDiv">
+					<img src="img/html5features.png" width="790px"/>
+				</div>	
+			</section>
+			<section>
+				<h2>How?</h2>
+				<div class="sectionDiv">
+					
+				</div>
+			</section>
+			<section>
+				<h2>Completed so far</h2>
+				<div class="sectionDiv">
+					
+				</div>
+			</section>
+			
+			<section>
+				<h2>Pending</h2>
+				<div class="sectionDiv">
+					
+				</div>
+			</section>
+			
+			<section>
+				<h2>Teams</h2>
+				<div class="sectionDiv">
+					<ul>
+						<li>Nimbus</li>
+						<li>Webwiz</li>
+					</ul>
+				</div>
+			</section>
+			
+			<section>
+				<h1>Thank You</h1>
+				<br><br><br><br><br><br>
+				<h3 class="inverted"> By Sapna Grover</h3>
+			</section>
+			</div>
 
-          <h1 id="project_title">HTML5</h1>
-          <h2 id="project_tagline"></h2>
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
 
-        </header>
-    </div>
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+		<script src="lib/js/head.min.js"></script>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+		<script>
+			// Load reveal.js as well as a classList polyfill if needed
+			head.js( !document.body.classList ? 'lib/js/classList.js' : null )
+				.js( 'js/reveal.js', function() {
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+				// Parse the query string into a key/value object
+				var query = {};
+				location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+					query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+				} );
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+				// Fires when a slide with data-state=customevent is activated
+				Reveal.addEventListener( 'customevent', function() {
+					console.log( '"customevent" has fired' );
+				} );
 
-<h3>Designer Templates</h3>
+				// Fires each time a new slide is activated
+				Reveal.addEventListener( 'slidechanged', function( event ) {
+					// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+				} );
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+				// Full list of configuration options available here:
+				// https://github.com/hakimel/reveal.js#configuration
+				Reveal.initialize({
+					controls: true,
+					progress: true,
+					history: true,
+					
+					theme: query.theme || 'neon', // default/neon/beige
+					transition: query.transition || 'concave' // default/cube/page/concave/linear(2d)
+				});
 
-<h3>Rather Drive Stick?</h3>
+			} );
+			
+			// Load highlight.js for syntax highlighting of code samples
+			head.js( 'lib/js/highlight.js', function() { 
+				hljs.initHighlightingOnLoad(); 
+			} );
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+			// If we're runnning the notes server we need to include some additional JS
+			// TODO Is there a better way to determine if we're running the notes server?
+			if( window.location.host === 'localhost:1947' ) {
+				head.js( 'socket.io/socket.io.js', 'plugin/speakernotes/client.js' );
+			}
+		</script>
+		
+	</body>
 </html>
