@@ -828,3 +828,108 @@ ul#navigation li a.first {
 ul#navigation li a.last {
 	border-right: 0 none;
 }
+/*------------------------------------*\
+  ACCORDION
+\*------------------------------------*/
+.accordion{
+  width:700px;
+  overflow:hidden;
+  list-style:none;
+  margin-bottom:10px;
+  text-shadow:1px 1px 1px rgba(0,0,0,0.25);
+
+
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  -o-border-radius:10px;
+  border-radius:10px;
+}
+.accordion li{
+  float:left;
+  width:20%;
+  overflow:hidden;
+  height:250px;
+  -moz-transition:width 0.2s ease-out;
+  -webkit-transition:width 0.2s ease-out;
+  -o-transition:width 0.2s ease-out;
+  transition:width 0.2s ease-out;
+  -moz-transition-delay:0.15s;
+  -webkit-transition-delay:0.15s;
+  -o-transition-delay:0.15s;
+  transition-delay:0.15s;
+}
+.accordion li:first-of-type{
+  -moz-border-radius:10px 0 0 10px;
+  -webkit-border-radius:10px 0 0 10px;
+  -o-border-radius:10px 0 0 10px;
+  border-radius:10px 0 0 10px;
+}
+.accordion li:last-of-type{
+  -moz-border-radius:0 10px 10px 0;
+  -webkit-border-radius:0 10px 10px 0;
+  -o-border-radius:0 10px 10px 0;
+  border-radius:0 10px 10px 0;
+}
+.accordion div{
+  padding:10px;
+}
+.accordion:hover li{
+  width:10%;
+}
+.accordion li:hover{
+  width:60%;
+}
+.slide-01,
+.slide-02 ,
+.slide-03,
+.slide-04,
+.slide-05  { 
+margin-left: 5px;
+background-color: white;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(white));
+background-image: -webkit-linear-gradient(top, #EEE, white );
+background-image: -moz-linear-gradient(top, #EEE, white);
+background-image: -ms-linear-gradient(top, #EEE, white);
+background-image: -o-linear-gradient(top, #EEE, white);
+background-image: linear-gradient(top, #EEE, white);
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px; 
+}
+
+
+/*------------------------------------*\
+  VERTICAL
+\*------------------------------------*/
+#vertical{
+  height:400px;
+}
+#vertical li{
+  float:none;
+  height:10%;
+  width:100%;
+  -moz-transition:height 0.2s ease-out;
+  -webkit-transition:height 0.2s ease-out;
+  -o-transition:height 0.2s ease-out;
+  transition:height 0.2s ease-out;
+}
+#vertical li:first-of-type{
+  -moz-border-radius:10px 10px 0 0;
+  -webkit-border-radius:10px 10px 0 0;
+  -o-border-radius:10px 10px 0 0;
+  border-radius:10px 10px 0 0;
+}
+#vertical li:last-of-type{
+  -moz-border-radius:0 0 10px 10px;
+  -webkit-border-radius:0 0 10px 10px;
+  -o-border-radius:0 0 10px 10px;
+  border-radius:0 0 10px 10px;
+}
+#vertical:hover li{
+  height:10%;
+  width:100%;
+}
+#vertical li:hover{
+  height:60%;
+  width:100%;
+}
