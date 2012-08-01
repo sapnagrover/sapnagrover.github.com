@@ -50,42 +50,44 @@
 		
 			<section>
 				<h2>HTML5 features - Semantics & Markup</h2>
-				<div id="wrapper">
-					<nav id="nav">
-						<ul id="navigation">
-							<li><a href="#">Input Types</a>
-								<ul>
-									<li><a href="#">Color picker</a></li>
-									<li><a href="#">Date picker</a></li>
-									<li><a href="#">Spinner control</a></li>				
-									<li><a href="#">Progress bar</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Validation</a></li>
-							<li><a href="#">Pattern</a></li>
-						</ul>
-					</nav>
-				</div><!--end wrapper-->					
-			</section>
-			<section>
-				<h2>HTML5 features - Semantics & Markup</h2>
-				<div style="text-align: left; margin-left: 60px;" class="sectionDiv">
+				<ul class="accordion featureList" id="vertical">
 
-					  <div style="text-align: left; margin-bottom: 10px;">Color Picker: <input type="color" name="favcolor" /></div>
-					  <div style="text-align: left; margin-bottom: 10px;">Date Picker : <input type="date" name="bday" /></div>
-					  <div style="text-align: left; margin-bottom: 10px;">Number (between 1 and 5): <input type="number" name="quantity" min="1" max="5" /></div>
-					 <div style="text-align: left; margin-bottom: 10px;"> <form action="">
+				  <li class="slide-01">
+					<div>
+					  <span>Input Types</span>
+			
+					  <div style="font-size:20px;text-align: left; margin-bottom: 0px;">Color picker: <input type="color" name="favcolor" /></div>
+					  <div style="font-size:20px;text-align: left; margin-bottom: 0px;">Date picker : <input type="date" name="bday" /></div>
+					  <div style="font-size:20px;text-align: left; margin-bottom: 0px;">Spinner (between 1 and 5): <input type="number" name="quantity" min="1" max="5" /></div>	
+					  <div style="font-size:20px;text-align: left; margin-bottom: 0px;">Progress bar : <progress value="75" max="100"><span class="pln">3/4 complete</span></progress></div>				  
+					</div>
+				  </li>
+
+				  <li class="slide-02">
+					<div>
+					  Validation
+				 <div style="font-size:20px;text-align: left; margin-bottom: 0px;"> <form action="">
 					  E-mail: <input type="email" name="usremail" />
 					  <input type="submit" />
 					</form></div>
-					 <div style="text-align: left; margin-bottom: 10px;"> <form action="">
+					 <div style="font-size:20px;text-align: left; margin-bottom: 0px;"> <form action="">
 					  Required field: <input type="text (or other)" required name="some-name"/>
 					  <input type="submit" />
-					</form></div>					
-					Progress bar : <progress value="75" max="100"><span class="pln">3/4 complete</span></progress>
+					</form></div>	
+					</div>
+				  </li>
 
-				</div>
-			</section>			
+				  <li class="slide-03">
+					<div>
+					  Pattern
+					  <p>
+						<div style="font-size:20px;text-align: left; margin-bottom: 0px;">Telephone Number : <input type="tel"  placeholder="(555) 555-5555"	pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" /></div>					  
+					  </p>
+					</div>
+				  </li>
+				</ul>				
+			</section>
+			
 			<section class="fullPage">
 					<img style=";border: none;" src="img/html5css3.jpg"/>
 			</section>
