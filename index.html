@@ -1,14 +1,88 @@
-<!doctype html>  
-<html lang="en">
-	
-	<head>
+<html lang="en" class="theme-neon"><head>
 		<meta charset="utf-8">
 		
 		<title>7.1 UI -HTML5 Presentation</title>
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 		<link rel="stylesheet" href="css/main.css">
+<style>
+#wrapper article {
+width: 750px;
+margin: 0 auto;
+background: #eef url(../images/shade.jpg) repeat-x center bottom;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+border-top: 1px solid white;
+
+}
+</style>	
+	
+	<script>
+var addEvent = (function () {
+  if (document.addEventListener) {
+    return function (el, type, fn) {
+      if (el && el.nodeName || el === window) {
+        el.addEventListener(type, fn, false);
+      } else if (el && el.length) {
+        for (var i = 0; i < el.length; i++) {
+          addEvent(el[i], type, fn);
+        }
+      }
+    };
+  } else {
+    return function (el, type, fn) {
+      if (el && el.nodeName || el === window) {
+        el.attachEvent('on' + type, function () { return fn.call(el, window.event); });
+      } else if (el && el.length) {
+        for (var i = 0; i < el.length; i++) {
+          addEvent(el[i], type, fn);
+        }
+      }
+    };
+  }
+})();
+
+(function () {
+
+var pre = document.createElement('pre');
+pre.id = "view-source"
+
+// private scope to avoid conflicts with demos
+addEvent(window, 'click', function (event) {
+  if (event.target.hash == '#view-source') {
+    // event.preventDefault();
+    if (!document.getElementById('view-source')) {
+      // pre.innerHTML = ('<!DOCTYPE html>\n<html>\n' + document.documentElement.innerHTML + '\n</html>').replace(/[<>]/g, function (m) { return {'<':'&lt;','>':'&gt;'}[m]});
+      var xhr = new XMLHttpRequest();
+
+      // original source - rather than rendered source
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          pre.innerHTML = this.responseText.replace(/[<>]/g, function (m) { return {'<':'&lt;','>':'&gt;'}[m]});
+          prettyPrint();
+        }
+      };
+
+      document.body.appendChild(pre);
+      // really need to be sync? - I like to think so
+      xhr.open("GET", window.location, true);
+      xhr.send();
+    }
+    document.body.className = 'view-source';
+    
+    var sourceTimer = setInterval(function () {
+      if (window.location.hash != '#view-source') {
+        clearInterval(sourceTimer);
+        document.body.className = '';
+      }
+    }, 200);
+  }
+});
+  
+})();	
+	</script>
 	</head>
 	
 	<body>
@@ -20,17 +94,17 @@
 			
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-			<section class="fullPage">
-				<img style="border: none;"  src="img/HTML5.png"/>
+			<section class="fullPage present" style="display: block; ">
+				<img style="border: none;" src="img/HTML5.png">
 			</section>			
-			<section class="fullPage">
+			<section class="fullPage future" style="display: block; ">
 				<div style="position:absolute; left: 40px; top:500px; font-weight:bold; color: white;">Goal 4:  End-user UI is generated using HTML5 doc type</div>
-				<img style=";border: none;" src="img/HTML5.png"/>
+				<img style=";border: none;" src="img/HTML5.png">
 			</section>
-			<section class="fullPage">
+			<section class="fullPage future" style="display: block; ">
 					<iframe src="http://www.evolutionoftheweb.com/#/evolution/night"></iframe>
 			</section>				
-			<section>
+			<section style="display: block; " class="future">
 				<h2> HTML5 features</h2>
 				<div class="sectionDiv">
 					<ul class="featureList">
@@ -44,100 +118,183 @@
 					</ul>					
 				</div>	
 			</section>
-			<section class="fullPage">
-					<img style=";border: none;" src="img/html5semantics.jpg"/>
+			<section class="fullPage future" style="display: none; ">
+					<img style=";border: none;" src="img/html5semantics.jpg">
 			</section>
-		
-			<section>
-				<h2>HTML5 features - Semantics & Markup</h2>
-				<ul class="accordion featureList" id="vertical">
+			<section style="display: none; " class="future">
+				<h2>HTML5 features - Semantics &amp; Markup</h2>
 
-				  <li class="slide-01">
-					<div>
-					  <span>Input Types</span>
+					 <div style="font-size:28px; margin-bottom: 20px;">Input Types</div>
 			
-					  <div style="font-size:20px;text-align: left; margin-bottom: 0px;">Color picker: <input type="color" name="favcolor" /></div>
-					  <div style="font-size:20px;text-align: left; margin-bottom: 0px;">Date picker : <input type="date" name="bday" /></div>
-					  <div style="font-size:20px;text-align: left; margin-bottom: 0px;">Spinner (between 1 and 5): <input type="number" name="quantity" min="1" max="5" /></div>	
-					  <div style="font-size:20px;text-align: left; margin-bottom: 0px;">Progress bar : <progress value="75" max="100"><span class="pln">3/4 complete</span></progress></div>				  
-					</div>
-				  </li>
+			<div class="inputWrapper">
+					 <div style="font-size:20px;text-align: left; margin-left: 20px;margin-bottom: 40px;">Date picker : <span style="margin-left: 40px;"><input type="date" name="datepicker"></span></div>
+					<pre>						<span style="margin-left:-530px">&lt;</span><span>input</span><span> type="date" name="datepicker"</span><span> /</span><span>&gt;</span>
+					</pre>
+			</div>		
+			</section>
+			<section style="display: none; " class="future">
+				<h2>HTML5 features - Semantics &amp; Markup</h2>
 
-				  <li class="slide-02">
-					<div>
-					  Validation
-				 <div style="font-size:20px;text-align: left; margin-bottom: 0px;"> <form action="">
-					  E-mail: <input type="email" name="usremail" />
-					  <input type="submit" />
-					</form></div>
-					 <div style="font-size:20px;text-align: left; margin-bottom: 0px;"> <form action="">
-					  Required field: <input type="text (or other)" required name="some-name"/>
-					  <input type="submit" />
-					</form></div>	
-					</div>
-				  </li>
+					 <div style="font-size:28px; margin-bottom: 20px;">Input Types</div>
+			
+			<div class="inputWrapper">
+					 <div style="font-size:20px;text-align: left; margin-left: 20px;margin-bottom: 40px;">Number (between 1 and 5): <span style="margin-left: 40px;"><input type="number" name="quantity" min="1" max="5"></span></div>
+					<pre>						<span style="margin-left:-580px">&lt;</span><span>input</span><span> type="number" name="quantity" min="1" max="5"</span><span> /</span><span>&gt;</span>
+					</pre>
+			</div>		
+			</section>
+			<section style="display: none; " class="future">
+				<h2>HTML5 features - Semantics &amp; Markup</h2>
 
-				  <li class="slide-03">
-					<div>
-					  Pattern
-					  <p>
-						<div style="font-size:20px;text-align: left; margin-bottom: 0px;">Telephone Number : <input type="tel"  placeholder="(555) 555-5555"	pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" /></div>					  
-					  </p>
-					</div>
-				  </li>
-				</ul>				
+					 <div style="font-size:28px; margin-bottom: 20px;">Validation</div>
+			
+			<div class="inputWrapper">
+					 <div style="font-size:20px;text-align: left; margin-left: 20px;margin-bottom: 0px;"><form action="">E-mail: <span style="margin-left: 106px;"><input type="email" name="usremail">&nbsp;<input value="Press on wrong email" type="submit"></span></form></div>
+					 <div style="font-size:20px;text-align: left; margin-left: 20px;margin-bottom: 40px;"><form action="">Required field: <span style="margin-left: 40px;"><input type="text" required="">&nbsp;<input value="Press when empty" type="submit"></span></form></div>					 
+					<pre>						<span style="margin-left:-580px">&lt;</span><span>input</span><span> type="email" name="useremail"</span><span> /</span><span>&gt;</span>
+						<div><span style="">&lt;</span><span>input</span><span> type="text" required</span><span> /</span><span>&gt;</span></div>
+					</pre>
+			</div>		
+			</section>
+			<section style="display: none; " class="future">
+				<h2>HTML5 features - Semantics &amp; Markup</h2>
+
+					 <div style="font-size:28px; margin-bottom: 20px;">Pattern</div>
+			
+			<div class="inputWrapper">
+					 <div style="font-size:20px;text-align: left; margin-left: 20px;margin-bottom: 40px;">Telephone Number : <span style="margin-left: 40px;"><input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"></span></div>
+					<pre>						<span style="margin-left:-580px">&lt;</span><span>input</span><span> type="tel" placeholder="(555) 555-5555"</span><br><span> pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"</span><span> /</span><span>&gt;</span>
+					</pre>
+			</div>		
+			</section>			
+	
+			<section id="wrapper" style="display: none; " class="future">
+				<h2>HTML5 features - Semantics &amp; Markup</h2>			
+				<style type="text/css">
+				#wrapper li {
+				  list-style: none;
+				}
+
+				#wrapper li a {
+				  text-decoration: none;
+				  color: #000;
+				  margin: 10px;
+				  width: 190px;
+				  border: 3px dashed #999;
+				  background: #eee;
+				  padding: 5px;
+				  display: block;
+				}
+
+				*[draggable=true] {
+				  -moz-user-select:none;
+				  -khtml-user-drag: element;
+				  cursor: move;
+				}
+
+				*:-khtml-drag {
+				  background-color: rgba(238,238,238, 0.5);
+				}
+
+				#wrapper li a:hover:after {
+				  content: ' (drag me)';
+				  color: #000;
+				}
+
+				#wrapper ul {
+				  margin-left: 200px;
+				  min-height: 200px;
+				}
+
+				#wrapper li.over {
+				  border-color: #333;
+				  background: #ccc;
+				}
+
+				#bin {
+				  background: url(img/recyclebin_empty.png) top right no-repeat;
+				  height: 250px;
+				  width: 166px;
+				  float: left;
+				  margin-left: 45px;
+				  position: relative;
+				  margin-top: 0;
+				}
+
+				#bin.over {
+				  background: url(img/recyclebin.png) top left no-repeat;
+				}
+
+				#bin p {
+				  font-weight: bold;
+				  text-align: center;
+				  position: absolute;
+				  bottom: 20px;
+				  width: 166px;
+				  font-size: 32px;
+				  color: #000;
+				  text-shadow: #000 2px 2px 2px;
+				  top: 155px;
+				}
+				</style>
+				<article style="margin-left:60px; height:370px">
+				  <div style="font-size:20px;text-align: left; margin-left:10px;margin-bottom: 30px;">Drag and drop to have the bin eat the item.</div>
+				  <div id="bin"></div>
+				  <ul>
+					<li><a id="one" href="http:/sapnagrover.github.com/index.html#/9" draggable="true" class="roll"><span data-title="one">one</span></a></li>
+					<li><a href="http:/sapnagrover.github.com/index.html#/9" id="two" draggable="true" class="roll"><span data-title="two">two</span></a></li>
+					<li><a href="http:/sapnagrover.github.com/index.html#/9" id="three" draggable="true" class="roll"><span data-title="three">three</span></a></li>
+				  </ul>
+					<pre>						<span style="margin-left:-680px">&lt;</span><span>a</span><span> href="#" draggable="true"&gt; </span>one &lt;<span>/&gt;</span>
+					</pre>
+				</article>	
 			</section>
 			
-			<section class="fullPage">
-					<img style=";border: none;" src="img/html5css3.jpg"/>
+			<section class="fullPage future" style="display: none; ">
+					<img style=";border: none;" src="img/html5css3.jpg">
 			</section>
-			<section>
+			<section style="display: none; " class="future">
 				<h2> HTML5 features - CSS3</h2>
 				<div class="sectionDiv">
-						<div  style="text-align: left; margin-bottom: 10px;">Gradients :</div>
-						<div style="text-align: left;font-size: 16px;color: #C61800;text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;">
-						background: -webkit-gradient(linear, left top, left bottom, 
-                             from(#00abeb), to(white), 
-                             color-stop(0.5, white), color-stop(0.5, #66cc00))
-						</div>
-				<div id="gradients-linear-example" class="example"></div>
-						
+					<div style="text-align: left; margin-bottom: 10px;">Gradients :</div>
+					<div id="gradients-linear-example" class="example"></div>
+					<pre>						<span style="margin-left:-580px">background: -*-gradient(</span><span style="color:green"> /*Two Stop gradient*/</span><br><span>linear, left top, left bottom,</span><br><span>from(blue), to(green),</span><br><span>color-stop(0.5, white),</span><span style="color:green">/*first stop at white*/</span><br><span>color-stop(0.5, white)</span><span style="color:green"> /*second stop from white*/</span><br><span>);</span>
+					</pre>
 				</div>	
 			</section>
-			<section>
+			<section style="display: none; " class="future">
 				<h2> HTML5 features - CSS3</h2>
 				<div class="sectionDiv">
-						<div  style="text-align: left; margin-bottom: 10px;">Rounded Corners :</div>
-						<div style="text-align: left;font-size: 16px;color: #C61800;text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;">
-							border-radius: 50px 50px 50px 50px; <br>
-							-moz-border-radius: 50px 50px 50px 50px; <br>
-							-webkit-border-radius: 50px 50px 50px 50px; <br>
-							border: 1px solid #800000;
-						</div>
-				<div id="rounded-example" class="example"></div>
-						
+					<div style="text-align: left; margin-bottom: 10px;">Rounded Corners :</div>
+					<div id="rounded-example" class="example"></div>
+					<pre>						<span style="margin-left:-580px">-*-border-radius: 50px 50px 50px 50px;</span>
+					</pre>
+					
 				</div>	
-			</section>
-			<section>
+			</section>			
+
+			<section style="display: none; " class="future">
 				<h2>Why HTML5</h2>
 				<div class="sectionDiv">
 					<ul>
 						<li>30% faster 
 							<ul>
-								<li><a href="http://www.neowin.net/news/microsoft-sites-using-ie-10-and-html5-load-30-percent-faster"> Microsoft: Sites using IE 10 and HTML5 load 30 percent faster </a></li> 
-								<li><a href="http://www.ditii.com/2012/04/26/flickr-html5-drag-drop-uploadr-faster-upto-30-file-size-limits-launched/">
+								<li><a href="http://www.neowin.net/news/microsoft-sites-using-ie-10-and-html5-load-30-percent-faster" draggable="true" class="roll"><span data-title=" Microsoft: Sites using IE 10 and HTML5 load 30 percent faster "> Microsoft: Sites using IE 10 and HTML5 load 30 percent faster </span></a></li> 
+								<li><a href="http://www.ditii.com/2012/04/26/flickr-html5-drag-drop-uploadr-faster-upto-30-file-size-limits-launched/" draggable="true" class="roll"><span data-title="
 								Flickr New HTML5 Drag-n-Drop Uploadr -Faster Upto 30%
-								</a>
+								">
+								Flickr New HTML5 Drag-n-Drop Uploadr -Faster Upto 30%
+								</span></a>
 								</li>
 							</ul>
 						</li>
-						<li>Works on iPhone, iPad, Android - <a href="http://www.html5rocks.com/en/mobile">HTML5 features are already supported on modern mobile browse</a></li>
-						<li>Built on open web standards -<a href="http://www.html5rocks.com/en/tutorials/speed/quick/">Best practices for faster Web app with HTML5</a></li>
+						<li>Works on iPhone, iPad, Android - <a href="http://www.html5rocks.com/en/mobile" draggable="true" class="roll"><span data-title="HTML5 features are already supported on modern mobile browse">HTML5 features are already supported on modern mobile browse</span></a></li>
+						<li>Built on open web standards -<a href="http://www.html5rocks.com/en/tutorials/speed/quick/" draggable="true" class="roll"><span data-title="Best practices for faster Web app with HTML5">Best practices for faster Web app with HTML5</span></a></li>
 					</ul>	
 				</div>
 			</section>
 	
-			<section>
+			<section style="display: none; " class="future">
 				<h2>Why HTML5</h2>
 				<div class="sectionDiv">
 					<ul>
@@ -148,43 +305,43 @@
 					</ul>	
 				</div>
 			</section>
-			<section class="fullPage">
-					<img style=";border: none;" src="img/HTML5Future.png"/>
+			<section class="fullPage future" style="display: none; ">
+					<img style=";border: none;" src="img/HTML5Future.png">
 			</section>			
-			<section>
+			<section style="display: none; " class="future">
 				<h2>How?</h2>
 				<div class="sectionDiv">
 					
 				</div>
 			</section>
-			<section>
+			<section style="display: none; " class="future">
 				<h2>Completed so far</h2>
 				<div class="sectionDiv">
 					
 				</div>
 			</section>
-			<section>
+			<section style="display: none; " class="future">
 				<h2>In Progress</h2>
 				<div class="sectionDiv">
 					
 				</div>
 			</section>			
-			<section>
+			<section style="display: block; " class="future">
 				<h2>Pending</h2>
 				<div class="sectionDiv">
 					
 				</div>
 			</section>
 			
-			<section>
+			<section style="display: block; " class="future">
 				<h2>Teams</h2>
 				<div class="sectionDiv">
-					<img style=";border: none;" src="img/nimbus.png"/>
-					<img style=";border: none;" src="img/webwiz.png"/>
+					<img style=";border: none;" src="img/nimbus.png">
+					<img style=";border: none;" src="img/webwiz.png">
 				</div>
 			</section>
 			
-			<section>
+			<section style="display: block; " class="future">
 				<h1 style="margin-top:70px">Thank You</h1>
 				<br><br><br><br>
 				<h3 class="inverted"> By Sapna Grover</h3>
@@ -192,20 +349,89 @@
 			</div>
 
 			<!-- The navigational controls UI -->
-			<aside class="controls">
-				<a class="left" href="#">&#x25C4;</a>
-				<a class="right" href="#">&#x25BA;</a>
-				<a class="up" href="#">&#x25B2;</a>
-				<a class="down" href="#">&#x25BC;</a>
+			<aside class="controls" style="display: block; ">
+				<a class="left" href="#">◄</a>
+				<a class="right enabled" href="#">►</a>
+				<a class="up" href="#">▲</a>
+				<a class="down" href="#">▼</a>
 			</aside>
 
 			<!-- Presentation progress bar -->
-			<div class="progress"><span></span></div>
+			<div class="progress" style="display: block; "><span style="width: 0px; "></span></div>
 			
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
+  <script>
 
+  var eat = ['yum!', 'gulp', 'burp!', 'nom'];
+  var yum = document.createElement('p');
+  var msie = /*@cc_on!@*/0;
+  yum.style.opacity = 1;
+
+  var links = document.querySelectorAll('li > a'), el = null;
+  for (var i = 0; i < links.length; i++) {
+    el = links[i];
+  
+    el.setAttribute('draggable', 'true');
+  
+    addEvent(el, 'dragstart', function (e) {
+      e.dataTransfer.effectAllowed = 'copy'; // only dropEffect='copy' will be dropable
+      e.dataTransfer.setData('Text', this.id); // required otherwise doesn't work
+    });
+  }
+
+  var bin = document.querySelector('#bin');
+
+  addEvent(bin, 'dragover', function (e) {
+    if (e.preventDefault) e.preventDefault(); // allows us to drop
+    this.className = 'over';
+    e.dataTransfer.dropEffect = 'copy';
+    return false;
+  });
+
+  // to get IE to work
+  addEvent(bin, 'dragenter', function (e) {
+    this.className = 'over';
+    return false;
+  });
+
+  addEvent(bin, 'dragleave', function () {
+    this.className = '';
+  });
+
+  addEvent(bin, 'drop', function (e) {
+    if (e.stopPropagation) e.stopPropagation(); // stops the browser from redirecting...why???
+
+    var el = document.getElementById(e.dataTransfer.getData('Text'));
+    
+    el.parentNode.removeChild(el);
+
+    // stupid nom text + fade effect
+    bin.className = '';
+    yum.innerHTML = eat[parseInt(Math.random() * eat.length)];
+
+    var y = yum.cloneNode(true);
+    bin.appendChild(y);
+
+    setTimeout(function () {
+      var t = setInterval(function () {
+        if (y.style.opacity <= 0) {
+          if (msie) { // don't bother with the animation
+            y.style.display = 'none';
+          }
+          clearInterval(t); 
+        } else {
+          y.style.opacity -= 0.1;
+        }
+      }, 50);
+    }, 250);
+
+    return false;
+  });
+
+  </script>
+  
 		<script>
 			// Load reveal.js as well as a classList polyfill if needed
 			head.js( !document.body.classList ? 'lib/js/classList.js' : null )
@@ -250,7 +476,7 @@
 			if( window.location.host === 'localhost:1947' ) {
 				head.js( 'socket.io/socket.io.js', 'plugin/speakernotes/client.js' );
 			}
-		</script>
+		</script><script type="text/javascript" src="js/reveal.js"></script><script type="text/javascript" src="lib/js/highlight.js"></script>
 		
-	</body>
-</html>
+	
+</body></html>
