@@ -149,8 +149,8 @@ addEvent(window, 'click', function (event) {
 					 <div style="font-size:28px; margin-bottom: 20px;">Validation</div>
 			
 			<div class="inputWrapper">
-					 <div style="font-size:20px;text-align: left; margin-left: 20px;margin-bottom: 0px;"><form action="">E-mail: <span style="margin-left: 106px;"><input type="email" name="usremail">&nbsp;<input value="Press on wrong email" type="submit"></span></form></div>
-					 <div style="font-size:20px;text-align: left; margin-left: 20px;margin-bottom: 40px;"><form action="">Required field: <span style="margin-left: 40px;"><input type="text" required="">&nbsp;<input value="Press when empty" type="submit"></span></form></div>					 
+					 <div style="font-size:20px;text-align: left; margin-left: 20px;margin-bottom: 0px;"><form action="">E-mail: <span style="margin-left: 106px;"><input type="email" name="usremail"></span></form></div>
+					 <div style="font-size:20px;text-align: left; margin-left: 20px;margin-bottom: 40px;"><form action="">Required field: <span style="margin-left: 40px;"><input type="text" required=""></span></form></div>					 
 					<pre>						<span style="margin-left:-580px">&lt;</span><span>input</span><span> type="email" name="useremail"</span><span> /</span><span>&gt;</span>
 						<div><span style="">&lt;</span><span>input</span><span> type="text" required</span><span> /</span><span>&gt;</span></div>
 					</pre>
@@ -258,10 +258,16 @@ addEvent(window, 'click', function (event) {
 				<div class="sectionDiv">
 					<div style="text-align: left; margin-bottom: 10px;">Gradients :</div>
 					<div id="gradients-linear-example" class="example"></div>
-					<pre>						<span style="margin-left:-580px">background: -*-gradient(</span><span style="color:green"> /*Two Stop gradient*/</span><br><span>linear, left top, left bottom,</span><br><span>from(blue), to(green),</span><br><span>color-stop(0.5, white),</span><span style="color:green">/*first stop at white*/</span><br><span>color-stop(0.5, white)</span><span style="color:green"> /*second stop from white*/</span><br><span>);</span>
+					<pre>						<span style="margin-left:-580px">background: -*-gradient(</span><span style="color:green"> /*Two Stop gradient*/</span><br><span>linear, left top, left bottom,</span><br><span>from(red), to(green),</span><br><span>color-stop(0.5, white),</span><span style="color:green">/*first stop at white*/</span><br><span>color-stop(0.5, white)</span><span style="color:green"> /*second stop from white*/</span><br><span>);</span>
 					</pre>
 				</div>	
 			</section>
+			<section style="display: none; " class="future">
+				<h2> HTML5 features - CSS3</h2>
+				<div class="sectionDiv">
+					<div style="text-align: left; margin-left: 30px;">Gradients: How is it done today?</div>
+				</div>	
+			</section>			
 			<section style="display: none; " class="future">
 				<h2> HTML5 features - CSS3</h2>
 				<div class="sectionDiv">
@@ -272,7 +278,12 @@ addEvent(window, 'click', function (event) {
 					
 				</div>	
 			</section>			
-
+			<section style="display: none; " class="future">
+				<h2> HTML5 features - CSS3</h2>
+				<div class="sectionDiv">
+					<div style="text-align: left; margin-left: 30px;">Rounded Corners: How is it done today?</div>
+				</div>	
+			</section>	
 			<section style="display: none; " class="future">
 				<h2>Why HTML5</h2>
 				<div class="sectionDiv">
@@ -305,13 +316,19 @@ addEvent(window, 'click', function (event) {
 					</ul>	
 				</div>
 			</section>
-			<section class="fullPage future" style="display: none; ">
-					<img style=";border: none;" src="img/HTML5Future.png">
-			</section>			
+	
 			<section style="display: none; " class="future">
-				<h2>How?</h2>
+				<h2>How ?</h2>
 				<div class="sectionDiv">
-					
+					<ul>
+						<li>Converting OOTB UI to render in Standards mode.</li>
+						<li>Introduced a switch
+							<ul>
+								<li>Application level switch</li>
+								<li>Harness level switch</li>
+							</ul>
+						</li>
+					</ul>						
 				</div>
 			</section>
 			<section style="display: none; " class="future">
@@ -320,27 +337,21 @@ addEvent(window, 'click', function (event) {
 					
 				</div>
 			</section>
-			<section style="display: none; " class="future">
-				<h2>In Progress</h2>
-				<div class="sectionDiv">
-					
-				</div>
-			</section>			
-			<section style="display: block; " class="future">
-				<h2>Pending</h2>
-				<div class="sectionDiv">
-					
-				</div>
-			</section>
 			
 			<section style="display: block; " class="future">
 				<h2>Teams</h2>
 				<div class="sectionDiv">
-					<img style=";border: none;" src="img/nimbus.png">
-					<img style=";border: none;" src="img/webwiz.png">
+					<img style=";border: none; height:120px;" src="img/nimbus.png"><br>
+					<img style=";border: none; height:120px; margin-right:50px;" src="img/pixelperfect.png"><img style=";border: none; height:120px;" src="img/busybis.png"><br>
+					<img style=";border: none; height:120px; margin-right:50px;" src="img/webwiz.png"><img style=";border: none; height:120px; margin-right:50px;" src="img/autobots.png"><img style=";border: none; height:120px; margin-right:50px;" src="img/casemanagement.png"><img style=";border: none; height:120px;" src="img/integration.png">
 				</div>
 			</section>
-			
+			<section class="fullPage future" style="display: none; ">
+					<img style=";border: none;" src="img/roadmap.png">
+			</section>				
+			<section class="fullPage future" style="display: none; ">
+					<img style=";border: none;" src="img/HTML5Future.png">
+			</section>			
 			<section style="display: block; " class="future">
 				<h1 style="margin-top:70px">Thank You</h1>
 				<br><br><br><br>
