@@ -428,16 +428,19 @@ body {
 	
 	background-clip: border-box, border-box, border-box;
 
-	background-image: url("../img/html5logo.png"), url("../img/PegaLogo.png");
+	background-image: url("../img/html5logo.png"), url("../img/PegaLogo.png"), url("../img/footer.png");
 	background-origin: padding-box, padding-box, padding-box;
 	background-repeat: no-repeat;
-	background-position-y: 480px;
-	background-position-x: 25px, 800px;
+	background-position-y: 480px,480px,510px;
+	background-position-x: 25px, 800px, 270px;
 
 	border-radius: 10px 10px 10px 10px; 
 	-moz-border-radius: 10px 10px 10px 10px; 
 	-webkit-border-radius: 10px 10px 10px 10px;
 	box-shadow: 3px 2px 2px #888888;	
+	
+	content: 'Goal 4: End-user UI is generated using HTML5 doc type';
+	color: #000;
 }
 
 .reveal .slides>section.present {
@@ -696,8 +699,8 @@ box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, 0 0 5px rgba(255, 0, 0, .8);
 border: 0;
 height: 100px;
 margin: 20px;
-background: -moz-linear-gradient(90deg, blue, white, green, white);
-background: -webkit-gradient(linear, left top, left bottom, from(blue), to(green), color-stop(0.5, white), color-stop(0.5, white));
+background: -moz-linear-gradient(90deg, #E33331, white, #4DB849, white);
+background: -webkit-gradient(linear, left top, left bottom, from(#E33331), to(#4DB849), color-stop(0.5, white), color-stop(0.5, white));
   -moz-border-radius:10px;
   -webkit-border-radius:10px;
   -o-border-radius:10px;
