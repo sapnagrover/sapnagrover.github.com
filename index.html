@@ -6,6 +6,8 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 		<link rel="stylesheet" href="css/main.css">
+		<script src="http://wgandsw7:8082/socket.io/socket.io.js"></script>
+
 <style>
 #wrapper article {
 width: 750px;
@@ -18,8 +20,22 @@ border-top: 1px solid white;
 
 }
 </style>	
-	
+	<script type="text/javascript" src="js/reveal.js"></script>
 	<script>
+
+		// Establish the connection with the server
+		var socket = io.connect('http://wgandsw7:8082');
+
+		// Create a new socket connection
+		socket.on('slide_event', function (data) {
+			if(data =='Next')
+			document.getElementsByClassName('right')[0].click();
+			else
+			document.getElementsByClassName('left')[0].click();
+			
+			onDocumentKeyDown('0');
+		});
+		
 var addEvent = (function () {
   if (document.addEventListener) {
     return function (el, type, fn) {
@@ -83,6 +99,55 @@ addEvent(window, 'click', function (event) {
   
 })();	
 	</script>
+        <style>
+        
+            .charts_container{
+                width: 900px;
+                height: 420px;
+                margin: 10px auto;
+            }
+            
+            .chart_container_centered{
+                text-align: center;
+                width: 700px;
+                height: 420px;
+                margin: 10px auto;
+            }
+            
+            .chart_container{
+                width: 400px;
+                height: 400px;
+                margin: 0px 125px;
+                float: left;
+            }
+
+        </style>
+        <script type="application/javascript" src="js/awesomechart.js"> </script>
+    <script src="js/RGraph.common.core.js" ></script>
+    <script src="js/RGraph.hbar.js" ></script>
+	<script src="js/RGraph.common.dynamic.js" ></script>
+	<script src="js/RGraph.common.tooltips.js"></script>
+
+<style>span.lineNumber { color: Teal; background-color: ; }
+span.whitespace{}
+span.blockComment{ color: Green;}
+span.documentComment{ color: Gray;}
+span.lineComment{ color: Green;}
+span.preprocessor{ color: Blue;}
+span.verbatimStringLiteral{ color: Maroon;}
+span.stringliteral{ color: Maroon;}
+span.integerLiteral{ color: Maroon;}
+span.realLiteral{ color: Maroon;}
+span.charLiteral{ color: Maroon;}
+span.booleanLiteral{ color: Maroon;}
+span.otherLiteral{ color: Blue;}
+span.builtinType{ color: Blue;}
+span.keyword{ color: Blue;}
+span.punctuation{}
+span.othertext{}
+span.unknownchar{}
+</style>
+	
 	</head>
 	
 	<body>
@@ -241,9 +306,9 @@ addEvent(window, 'click', function (event) {
 				  <div style="font-size:20px;text-align: left; margin-left:10px;margin-bottom: 30px;">Drag and drop to have the bin eat the item.</div>
 				  <div id="bin"></div>
 				  <ul>
-					<li><a id="one" href="http:/sapnagrover.github.com/index.html#/9" draggable="true" class="roll"><span data-title="one">one</span></a></li>
-					<li><a href="http:/sapnagrover.github.com/index.html#/9" id="two" draggable="true" class="roll"><span data-title="two">two</span></a></li>
-					<li><a href="http:/sapnagrover.github.com/index.html#/9" id="three" draggable="true" class="roll"><span data-title="three">three</span></a></li>
+					<li><a id="one" href="http://wgandsw7:8080/71uigoal4/index.html#/9" draggable="true" class="roll"><span data-title="one">one</span></a></li>
+					<li><a href="http://wgandsw7:8080/71uigoal4/index.html#/9" id="two" draggable="true" class="roll"><span data-title="two">two</span></a></li>
+					<li><a href="http://wgandsw7:8080/71uigoal4/index.html#/9" id="three" draggable="true" class="roll"><span data-title="three">three</span></a></li>
 				  </ul>
 					<pre>						<span style="margin-left:-680px">&lt;</span><span>a</span><span> href="#" draggable="true"&gt; </span>one &lt;<span>/&gt;</span>
 					</pre>
@@ -266,6 +331,7 @@ addEvent(window, 'click', function (event) {
 				<h2> HTML5 features - CSS3</h2>
 				<div class="sectionDiv">
 					<div style="text-align: left; margin-left: 30px;">Gradients: How is it done today?</div>
+						<img style=";border: none; margin-top:20px;" src="img/howitisdonetodaygradient.png">
 				</div>	
 			</section>			
 			<section style="display: none; " class="future">
@@ -278,10 +344,39 @@ addEvent(window, 'click', function (event) {
 					
 				</div>	
 			</section>			
+
 			<section style="display: none; " class="future">
 				<h2> HTML5 features - CSS3</h2>
 				<div class="sectionDiv">
 					<div style="text-align: left; margin-left: 30px;">Rounded Corners: How is it done today?</div>
+					<img style=";border: none; margin-top:30px;" src="img/howitisdonetodayrounded.png">
+				</div>	
+			</section>	
+			
+			<section style="display: none; " class="future">
+				<h2> HTML5 features - CSS3</h2>
+				<div class="sectionDiv">
+					<div style="text-align: left; margin-left: 30px;">Rounded Corners: How is it done today?</div>
+
+				<pre class='codeHTML' style="font-size: 12px;"><span class='unknownchar'>&lt;</span><span class='othertext'>style</span><span class='whitespace'> </span><span class='othertext'>type</span><span class='unknownchar'>=</span><span class='stringliteral'>"text/css"</span><span class='unknownchar'>&gt;</span><span class='whitespace'>     
+    </span><span class='punctuation'>.</span><span class='othertext'>contentplace</span><span class='whitespace'> </span><span class='punctuation'>{</span><span class='whitespace'> </span><span class='othertext'>background</span><span class='punctuation'>-</span><span class='othertext'>color</span><span class='punctuation'>:</span><span class='whitespace'> </span><span class='othertext'>blue</span><span class='punctuation'>;</span><span class='whitespace'> </span><span class='punctuation'>}</span><span class='whitespace'> 
+    </span><span class='punctuation'>.</span><span class='othertext'>topplace</span><span class='punctuation'>{</span><span class='whitespace'> </span><span class='othertext'>background</span><span class='punctuation'>:</span><span class='whitespace'> </span><span class='othertext'>url</span><span class='punctuation'>(</span><span class='othertext'>top</span><span class='punctuation'>-</span><span class='othertext'>right</span><span class='punctuation'>.</span><span class='othertext'>png</span><span class='punctuation'>)</span><span class='whitespace'> </span><span class='othertext'>no</span><span class='punctuation'>-</span><span class='othertext'>repeat</span><span class='whitespace'> </span><span class='othertext'>top</span><span class='whitespace'> </span><span class='othertext'>right</span><span class='punctuation'>;</span><span class='whitespace'> </span><span class='punctuation'>}</span><span class='whitespace'> 
+    </span><span class='punctuation'>.</span><span class='othertext'>bottomplace</span><span class='whitespace'> </span><span class='punctuation'>{</span><span class='whitespace'> </span><span class='othertext'>background</span><span class='punctuation'>:</span><span class='whitespace'> </span><span class='othertext'>url</span><span class='punctuation'>(</span><span class='othertext'>bottom</span><span class='punctuation'>-</span><span class='othertext'>right</span><span class='punctuation'>.</span><span class='othertext'>png</span><span class='punctuation'>)</span><span class='whitespace'> </span><span class='othertext'>no</span><span class='punctuation'>-</span><span class='othertext'>repeat</span><span class='whitespace'> </span><span class='othertext'>top</span><span class='whitespace'> </span><span class='othertext'>right</span><span class='punctuation'>;</span><span class='whitespace'> </span><span class='punctuation'>}</span><span class='whitespace'> 
+    </span><span class='othertext'>img</span><span class='punctuation'>.</span><span class='othertext'>placeborder</span><span class='whitespace'> </span><span class='punctuation'>{</span><span class='whitespace'> </span><span class='othertext'>width</span><span class='punctuation'>:</span><span class='whitespace'> </span><span class='integerLiteral'>28</span><span class='othertext'>px</span><span class='punctuation'>;</span><span class='whitespace'> </span><span class='othertext'>height</span><span class='punctuation'>:</span><span class='whitespace'> </span><span class='integerLiteral'>28</span><span class='othertext'>px</span><span class='punctuation'>;</span><span class='othertext'>border</span><span class='punctuation'>:</span><span class='whitespace'> </span><span class='othertext'>none</span><span class='punctuation'>;</span><span class='othertext'>display</span><span class='punctuation'>:</span><span class='whitespace'> </span><span class='othertext'>block</span><span class='whitespace'> </span><span class='punctuation'>!</span><span class='othertext'>important</span><span class='punctuation'>;</span><span class='whitespace'> </span><span class='punctuation'>}</span><span class='whitespace'> 
+</span><span class='unknownchar'>&lt;</span><span class='punctuation'>/</span><span class='othertext'>style</span><span class='unknownchar'>&gt;</span><span class='whitespace'> 
+
+</span><span class='unknownchar'>&lt;</span><span class='othertext'>div</span><span class='whitespace'> </span><span class='keyword'>class</span><span class='unknownchar'>=</span><span class='stringliteral'>"contentplace"</span><span class='unknownchar'>&gt;</span><span class='whitespace'> 
+     
+    </span><span class='unknownchar'>&lt;</span><span class='othertext'>div</span><span class='whitespace'> </span><span class='keyword'>class</span><span class='unknownchar'>=</span><span class='stringliteral'>"topplace"</span><span class='unknownchar'>&gt;</span><span class='whitespace'> 
+        </span><span class='unknownchar'>&lt;</span><span class='othertext'>img</span><span class='whitespace'> </span><span class='othertext'>src</span><span class='unknownchar'>=</span><span class='stringliteral'>"top-left.png"</span><span class='whitespace'> </span><span class='keyword'>class</span><span class='unknownchar'>=</span><span class='stringliteral'>"placeborder"</span><span class='whitespace'> </span><span class='othertext'>style</span><span class='unknownchar'>=</span><span class='stringliteral'>"display: none"</span><span class='whitespace'> </span><span class='punctuation'>/</span><span class='unknownchar'>&gt;</span><span class='whitespace'> 
+    </span><span class='unknownchar'>&lt;</span><span class='punctuation'>/</span><span class='othertext'>div</span><span class='unknownchar'>&gt;</span><span class='whitespace'> 
+     
+    </span><span class='unknownchar'>&lt;</span><span class='othertext'>div</span><span class='whitespace'> </span><span class='keyword'>class</span><span class='unknownchar'>=</span><span class='stringliteral'>"bottomplace"</span><span class='unknownchar'>&gt;</span><span class='whitespace'> 
+        </span><span class='unknownchar'>&lt;</span><span class='othertext'>img</span><span class='whitespace'> </span><span class='othertext'>src</span><span class='unknownchar'>=</span><span class='stringliteral'>"bottom-left.png"</span><span class='whitespace'> </span><span class='keyword'>class</span><span class='unknownchar'>=</span><span class='stringliteral'>"placeborder"</span><span class='whitespace'> </span><span class='othertext'>style</span><span class='unknownchar'>=</span><span class='stringliteral'>"display: none"</span><span class='whitespace'> </span><span class='punctuation'>/</span><span class='unknownchar'>&gt;</span><span class='whitespace'> 
+    </span><span class='unknownchar'>&lt;</span><span class='punctuation'>/</span><span class='othertext'>div</span><span class='unknownchar'>&gt;</span><span class='whitespace'> 
+     
+</span><span class='unknownchar'>&lt;</span><span class='punctuation'>/</span><span class='othertext'>div</span><span class='unknownchar'>&gt;</span></pre>
+
 				</div>	
 			</section>	
 			<section style="display: none; " class="future">
@@ -328,15 +423,121 @@ addEvent(window, 'click', function (event) {
 								<li>Harness level switch</li>
 							</ul>
 						</li>
-					</ul>						
+					</ul>
+					<img style=";border: none; margin-top:10px;height: 250px;" src="img/doctypeenable.png">					
 				</div>
 			</section>
+<!--			
 			<section style="display: none; " class="future">
 				<h2>Completed so far</h2>
 				<div class="sectionDiv">
+					<div class="charts_container">
+						<div class="chart_container">
+						
+							<canvas id="chartCanvas1" width="400" height="400">
+								Your web-browser does not support the HTML 5 canvas element.
+							</canvas>
+							
+						</div>
+						
+					</div>
 					
+					<script type="application/javascript">
+						var chart1 = new AwesomeChart('chartCanvas1');
+						chart1.title = "Tasks By Product Area";
+						chart1.chartType = "horizontal bars";
+						chart1.data = [50,55,65,60,30,50.78];
+						chart1.labels = ['Harness Infrastructure','Layouts','Containers','Grids','Controls','Non Auto Generated Controls'];
+						chart1.colors = ['#006CFF', '#FF6600', '#34A038', '#945D59', '#93BBF4', '#F493B8'];
+						chart1.randomColors = true;
+						chart1.draw();
+
+					</script>					
 				</div>
 			</section>
+-->
+			<section style="display: none; " class="future">
+				<h2>Where are we?</h2>
+				
+				<div class="sectionDiv">
+				<div>Auto Genenerated UI</div>	
+					<canvas id="cvs" width="600" height="250">[No canvas support]</canvas>
+				</div>
+			</section>	
+			<section style="display: none; " class="future">
+				<h2>Where are we?</h2>
+				
+				<div class="sectionDiv">
+				<div>Reports</div>	
+					<canvas id="cvs1" width="600" height="250">[No canvas support]</canvas>
+				</div>
+			</section>	
+			<section style="display: none; " class="future">
+				<h2>Where are we?</h2>
+				
+				<div class="sectionDiv">
+				<div>OOTB UI</div>	
+					<canvas id="cvs2" width="600" height="250">[No canvas support]</canvas>
+				</div>
+			</section>
+					
+					<script>
+						window.onload = function ()
+						{
+							var hbar = new RGraph.HBar('cvs', [65,60,65,40,90,30]);
+							hbar.Set('chart.labels', ['Harness Infrastructure','Layouts','Containers','Grids','Controls','Non Auto Generated Controls']);
+							hbar.Set('chart.tooltips', [
+							'<div style="margin:10px; color:blue; line-height: 20px;">Ajax<br>CSS<br>Basic JS</div>',
+							'<div style="margin:10px; color:blue; line-height: 20px;">Smart Layouts<br>Percentage px<br>px fixed<br>Free form</div>',
+							'<div style="margin:10px; line-height: 20px;"><span style="color:green">Tabs</span><br><span style="color:red">Accordions</span><br><span style="color:blue">Dynamic Container</span><br><span style="color:blue">Expand/Collapse Bar</span><br><span style="color:green">Repeat Tabs</div></div>',
+							'<div style="margin:10px; line-height: 20px;"><span style="color:blue">Grid<br>Repeat Column<br>Repeat Row<br>Trees<br>Tree Grid</span></div>',
+							'<div style="margin:10px;v"><span style="color:green">Text Input<br>Datetime<br>Icon<br>Button<br>Auto Complete<br>Checkbox<br>Dynamic Select<br>Prompt Select</span><br><span style="color:red">Smart Info</span><br><span style="color:blue">Events & Behaviours</span></div>',
+							'<div style="margin:10px; line-height: 20px;"><span style="color:blue">Menus<br>Smart Info<br>Search Gadget</span>'
+							]);
+							hbar.Set('chart.tooltips.event', 'onmousemove');
+							hbar.Set('chart.xmax', '100');
+							hbar.Set('chart.units.post', '%');
+							hbar.Set('chart.shadow', 'true');
+							hbar.Set('chart.gutter.left', 180);
+							hbar.Set('chart.background.grid', false);
+							hbar.Set('chart.colors.sequential', true);
+							hbar.Set('chart.colors', ['#93BBF4', '#006CFF', '#FF6600', '#34A038', '#945D59', '#FCD209', '#FCD209']);
+							hbar.Draw();
+
+							var hbar = new RGraph.HBar('cvs1', [75,70,70]);
+							hbar.Set('chart.labels', ['List Views','Summary Views','Report Definition']);
+							hbar.Set('chart.tooltips', [
+							'<div style="margin:10px; line-height: 20px; color:blue;">List Views</div>',
+							'<div style="margin:10px; line-height: 20px; color:blue;">Summary Views</div>',
+							'<div style="margin:10px; line-height: 20px; color:blue;">Report Definition</div>']);
+							hbar.Set('chart.tooltips.event', 'onmousemove');
+							hbar.Set('chart.xmax', '100');
+							hbar.Set('chart.units.post', '%');
+							hbar.Set('chart.shadow', 'true');
+							hbar.Set('chart.gutter.left', 180);
+							hbar.Set('chart.background.grid', false);
+							hbar.Set('chart.colors.sequential', true);
+							hbar.Set('chart.colors', ['#FF6600', '#34A038', '#945D59', '#FCD209']);
+							hbar.Draw();
+							
+							var hbar = new RGraph.HBar('cvs2', [30,10,10,10]);
+							hbar.Set('chart.labels', ['Harnesses','Special Harnesses','Portals','Flow Actions']);
+							hbar.Set('chart.tooltips', [
+							'<div style="margin:10px; line-height: 20px; color:blue;">New<br>Perform<br>Review<br>Confirm<br>History & Actions<br>Where am I</div>',
+							'<div style="margin:10px; line-height: 20px; color:blue;">Tabbed Screen Flow<br>Perform Screen Flow<br>List Navigation</div>',
+							'<div style="margin:10px; line-height: 20px; color:blue;">User Portal<br>Manager Portal<br>Case Manager Portal</div>',
+							'<div style="margin:10px; line-height: 20px; color:blue;">Case Gallery<br>New application created using app express<br>Pega Sample Application</div>']);							
+							hbar.Set('chart.tooltips.event', 'onmousemove');
+							hbar.Set('chart.xmax', '100');
+							hbar.Set('chart.units.post', '%');
+							hbar.Set('chart.shadow', 'true');
+							hbar.Set('chart.gutter.left', 180);
+							hbar.Set('chart.background.grid', false);
+							hbar.Set('chart.colors.sequential', true);
+							hbar.Set('chart.colors', ['#93BBF4', '#006CFF', '#FF6600', '#34A038', '#945D59', '#FCD209']);
+							hbar.Draw();
+						}
+					</script>
 			
 			<section style="display: block; " class="future">
 				<h2>Teams</h2>
@@ -487,7 +688,7 @@ addEvent(window, 'click', function (event) {
 			if( window.location.host === 'localhost:1947' ) {
 				head.js( 'socket.io/socket.io.js', 'plugin/speakernotes/client.js' );
 			}
-		</script><script type="text/javascript" src="js/reveal.js"></script><script type="text/javascript" src="lib/js/highlight.js"></script>
+		</script><script type="text/javascript" src="lib/js/highlight.js"></script>
 		
 	
 </body></html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+	<script>
+		function display(el) {
+		
+			  if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+					var xmlhttp=new XMLHttpRequest();
+			  } else { // code for IE6, IE5
+					var xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			  }
+			  xmlhttp.onreadystatechange=function() {
+			  }
+			  xmlhttp.open("GET","http://wgandsw7:8082/message?slidetype="+el,true);
+			  xmlhttp.send();
+		}
+
+		</script>	
+</head>
+<body>
+<div style="margin:50px">
+
+<img src="img/previous.png" style="cursor:pointer;" onclick="display('Previous')" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="img/next.png" style="cursor:pointer;" onclick="display('Next')"/>
+</div>
+</body>
+</html>
