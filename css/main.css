@@ -372,14 +372,27 @@ body {
  *********************************************/
 
 .reveal .slides {
+
+
+}
+
+.reveal .slides>section,
+.reveal .slides>section>section {
+	display: none;
+
+	min-height: 500px;
+    z-index: 10;
+	background: white;
+	margin-bottom: 0px;
+
 	position: absolute;
 	width: 880px;
 	height: 550px;
 	
 	left: 50%;
 	top: 50%;
-	margin-left: -500px;
-	margin-top: -350px;
+	margin-left: -440px;
+	margin-top: -275px;
 	
 	text-align: center;
 
@@ -389,30 +402,12 @@ body {
 	     -o-transition: -o-perspective .4s ease;
 	        transition: perspective .4s ease;
 	
-	-webkit-perspective: 500px;
-	   -moz-perspective: 500px;
-	    -ms-perspective: 500px;
-	        perspective: 500px;
 
  	-webkit-perspective-origin: 50% 25%;
  	   -moz-perspective-origin: 50% 25%;
  	    -ms-perspective-origin: 50% 25%;
  	        perspective-origin: 50% 25%;
-
-}
-
-.reveal .slides>section,
-.reveal .slides>section>section {
-	display: none;
-	position: absolute;
-	width: 100%;
-	min-height: 500px;
-	height: 100% !important;
-    z-index: 10;
-	background: white;
-	margin: 50px;
-	margin-bottom: 0px;
-	
+			
 	-webkit-transform-style: preserve-3d;
 	   -moz-transform-style: preserve-3d;
 	    -ms-transform-style: preserve-3d;
@@ -521,7 +516,9 @@ body {
 /*********************************************
  * OVERVIEW
  *********************************************/
-
+.reveal.overview {
+	margin-top: 400px;
+}
 .reveal.overview .slides {
 	-webkit-perspective: 600px;
 	   -moz-perspective: 600px;
@@ -647,10 +644,8 @@ body {
 .reveal section.fullPage, 
 .reveal.cube .slides section.fullPage,
 .reveal.page .slides section.fullPage {
-	width: 100% !important;
-	height: 100% !important;
-	left: 0;
-	top: 0;
+
+
 	padding: 0px;
 	background-image: none;
 
@@ -659,7 +654,18 @@ body {
 	-webkit-border-radius: 0px 0px 0px 0px;
 	box-shadow: 0px 0px 0px #888888;		
 }
-
+.reveal section.fullPageFull, 
+.reveal.cube .slides section.fullPageFull,
+.reveal.page .slides section.fullPageFull {
+position: absolute;
+width: 100%;
+height: 100%;
+left: 0;
+top: 0;
+margin-left: 0px;
+margin-top: 0px;
+text-align: center;
+}
 .reveal section.fullPage img {
 	width: 100% !important;
 	height: 100% !important;
