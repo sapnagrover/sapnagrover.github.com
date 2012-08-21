@@ -21,19 +21,6 @@ border-top: 1px solid white;
 </style>	
 	<script type="text/javascript" src="js/reveal.js"></script>
 	<script>
-
-		// Establish the connection with the server
-		var socket = io.connect('http://wgandsw7:8082');
-
-		// Create a new socket connection
-		socket.on('slide_event', function (data) {
-			if(data =='Next')
-			document.getElementsByClassName('right')[0].click();
-			else
-			document.getElementsByClassName('left')[0].click();
-			
-			onDocumentKeyDown('0');
-		});
 		
 var addEvent = (function () {
   if (document.addEventListener) {
