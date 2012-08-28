@@ -6,7 +6,6 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 		<link rel="stylesheet" href="css/main.css">
-		<script src="http://wgandsw7:8082/socket.io/socket.io.js"></script>
 <style>
 #wrapper article {
 width: 750px;
@@ -17,6 +16,94 @@ background: #eef url(../images/shade.jpg) repeat-x center bottom;
 border-radius: 10px;
 border-top: 1px solid white;
 
+}
+
+.RGraph_tooltip {
+z-index: 100 !important;
+}
+
+.tooltip
+{
+  position: relative;
+  background: #eaeaea;
+  cursor: help;
+  display: inline-block;
+  text-decoration: none;
+  color: #222;
+  outline: none;
+}
+
+.tooltip span
+{
+  visibility: hidden;
+  position: absolute; 
+  bottom: 30px;
+  left: 50%;
+  z-index: 999;
+  width: 330px;
+  margin-left: -127px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  opacity: .9;
+  background-color: #ddd;                     
+  background-image: -webkit-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+  background-image: -moz-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+  background-image: -ms-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+  background-image: -o-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));  
+  -moz-border-radius: 4px;
+  border-radius: 4px;  
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.5) inset;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.5) inset;
+  box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.5) inset;  
+  text-shadow: 0 1px 0 rgba(255,255,255,.4); 
+}
+
+.tooltip:hover
+{
+  border: 0; /* IE6 fix */
+}
+
+.tooltip:hover span
+{
+  visibility: visible;
+}
+
+.tooltip span:before,
+.tooltip span:after
+{
+  content: "";
+  position: absolute;
+  z-index: 1000;
+  bottom: -7px;
+  left: 50%;
+  margin-left: -8px;  
+  border-top: 8px solid #ddd;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;        
+  border-bottom: 0;  
+}
+
+.tooltip span:before
+{
+  border-top-color: #ccc;
+  bottom: -8px;
+}
+
+.tooltip ul li {
+	font-size: 12 px;
+	line-height: 1.2 em;
+}
+.tooltip ul {
+	float: left;
+}
+.smallFont {
+	width: 100%;
+	padding: 40px;
+}
+
+.blueText {
+	color: #0055AB;
 }
 </style>	
 	<script type="text/javascript" src="js/reveal.js"></script>
@@ -85,6 +172,57 @@ addEvent(window, 'click', function (event) {
   
 })();	
 	</script>
+	<script src="js/RGraph.common.core.js" ></script>
+    <script src="js/RGraph.hbar.js" ></script>
+	<script src="js/RGraph.common.dynamic.js" ></script>
+	<script src="js/RGraph.common.tooltips.js"></script>
+
+					<script>
+						window.onload = function ()
+						{
+							var hbar = new RGraph.HBar('cvs', [65,60,65,65,90,30]);
+							hbar.Set('chart.labels', ['Harness Infrastructure','Layouts','Containers','Grids','Controls','Non Auto Generated Controls']);
+							hbar.Set('chart.tooltips', ['<div style="margin:10px; color:blue; line-height: 20px;">Ajax<br>CSS<br>Basic JS</div>', '<div style="margin:10px; color:blue; line-height: 20px;">Smart Layouts<br>Percentage px<br>px fixed<br>Free form</div>', '<div style="margin:10px; line-height: 20px;"><span style="color:green">Tabs</span><br><span style="color:red">Accordions</span><br><span style="color:blue">Dynamic Container</span><br><span style="color:blue">Expand/Collapse Bar</span><br><span style="color:green">Repeat Tabs</div></div>',	'<div style="margin:10px; line-height: 20px;"><span style="color:blue">Grid<br>Repeat Column<br>Repeat Row<br>Trees<br>Tree Grid</span></div>',	'<div style="margin:10px;v"><span style="color:green">Text Input<br>Datetime<br>Icon<br>Button<br>Auto Complete<br>Checkbox<br>Dynamic Select<br>Prompt Select</span><br><span style="color:red">Smart Info</span><br><span style="color:blue">Events & Behaviours</span></div>', '<div style="margin:10px; line-height: 20px;"><span style="color:blue">Menus<br>Smart Info<br>Search Gadget</span>']);
+							hbar.Set('chart.tooltips.event', 'onmousemove');
+							hbar.Set('chart.tooltips.effect', 'expand');
+							hbar.Set('chart.xmax', '100');
+							hbar.Set('chart.units.post', '%');
+							hbar.Set('chart.shadow', 'true');
+							hbar.Set('chart.gutter.left', 180);
+							hbar.Set('chart.background.grid', false);
+							hbar.Set('chart.colors.sequential', true);
+							hbar.Set('chart.colors', ['#93BBF4', '#006CFF', '#FF6600', '#34A038', '#945D59', '#FCD209']);
+							hbar.Draw();
+
+							var hbar = new RGraph.HBar('cvs1', [75,70,70]);
+							hbar.Set('chart.labels', ['List Views','Summary Views','Report Definition']);
+							hbar.Set('chart.tooltips', ['<div style="margin:10px; line-height: 20px; color:blue;">List Views</div>','<div style="margin:10px; line-height: 20px; color:blue;">Summary Views</div>',	'<div style="margin:10px; line-height: 20px; color:blue;">Report Definition</div>']);
+							hbar.Set('chart.tooltips.event', 'onmousemove');
+							hbar.Set('chart.tooltips.effect', 'expand');
+							hbar.Set('chart.xmax', '100');
+							hbar.Set('chart.units.post', '%');
+							hbar.Set('chart.shadow', 'true');
+							hbar.Set('chart.gutter.left', 180);
+							hbar.Set('chart.background.grid', false);
+							hbar.Set('chart.colors.sequential', true);
+							hbar.Set('chart.colors', ['#FF6600', '#34A038', '#945D59']);
+							hbar.Draw();
+							
+							var hbar = new RGraph.HBar('cvs2', [10,10,10]);
+							hbar.Set('chart.labels', ['Special Harnesses','Portals','Flow Actions']);
+							hbar.Set('chart.tooltips', ['<div style="margin:10px; line-height: 20px; color:blue;">Tabbed Screen Flow<br>Perform Screen Flow<br>List Navigation</div>', '<div style="margin:10px; line-height: 20px; color:blue;">User Portal<br>Manager Portal<br>Case Manager Portal</div>', '<div style="margin:10px; line-height: 20px; color:blue;">Case Gallery<br>New application created using app express<br>Pega Sample Application</div>']);
+							hbar.Set('chart.tooltips.event', 'onmousemove');
+							hbar.Set('chart.tooltips.effect', 'expand');
+							hbar.Set('chart.xmax', '100');
+							hbar.Set('chart.units.post', '%');
+							hbar.Set('chart.shadow', 'true');
+							hbar.Set('chart.gutter.left', 180);
+							hbar.Set('chart.background.grid', false);
+							hbar.Set('chart.colors.sequential', true);
+							hbar.Set('chart.colors', ['#93BBF4', '#006CFF', '#FF6600']);
+							hbar.Draw();
+						}
+					</script>
         <style>
         
             .charts_container{
@@ -108,11 +246,6 @@ addEvent(window, 'click', function (event) {
             }
 
         </style>
-        <script type="application/javascript" src="js/awesomechart.js"> </script>
-    <script src="js/RGraph.common.core.js" ></script>
-    <script src="js/RGraph.hbar.js" ></script>
-	<script src="js/RGraph.common.dynamic.js" ></script>
-	<script src="js/RGraph.common.tooltips.js"></script>
 
 <style>span.lineNumber { color: Teal; background-color: ; }
 span.whitespace{}
@@ -153,7 +286,7 @@ span.unknownchar{}
 				<img style=";border: none;" src="img/HTML5.png">
 			</section>
 			<section style="display: none; " class="future">
-				<h2>Why HTML5</h2>
+				<h2>Why HTML5 ?</h2>
 				<div class="sectionDiv">
 					<ul>
 						<li>
@@ -174,19 +307,7 @@ span.unknownchar{}
 						<li>Built on open web standards -<a href="http://www.html5rocks.com/en/tutorials/speed/quick/" class="roll"><span data-title="Best practices for faster Web app with HTML5">Best practices for faster Web app with HTML5</span></a></li>
 					</ul>	
 				</div>
-			</section>
-	
-			<section style="display: none; " class="future">
-				<h2>Why HTML5</h2>
-				<div class="sectionDiv">
-					<ul>
-						<li>When Netscape 4 and IE 4 implemented CSS, their support did not match the W3C standard (or, indeed, each other).</li> 
-						<li>Netscape 4 had horribly broken support.</li>
-						<li>The result is one browser may interpret a CSS property or HTML tag one way while another may have a slightly or even largely varied implementation.</li>
-						<li>And Web designers have long been plagued by the support (or lack thereof) of standards in the browser.</li>
-					</ul>	
-				</div>
-			</section>			
+			</section>		
 			<section style="display: block; " class="future">
 				<h2> HTML5 features</h2>
 				<div class="sectionDiv">
@@ -475,70 +596,102 @@ span.unknownchar{}
 				</div>
 			</section>
 					
-					<script>
-						window.onload = function ()
-						{
-							var hbar = new RGraph.HBar('cvs', [65,60,65,40,90,30]);
-							hbar.Set('chart.labels', ['Harness Infrastructure','Layouts','Containers','Grids','Controls','Non Auto Generated Controls']);
-							hbar.Set('chart.tooltips', [
-							'<div style="margin:10px; color:blue; line-height: 20px;">Ajax<br>CSS<br>Basic JS</div>',
-							'<div style="margin:10px; color:blue; line-height: 20px;">Smart Layouts<br>Percentage px<br>px fixed<br>Free form</div>',
-							'<div style="margin:10px; line-height: 20px;"><span style="color:green">Tabs</span><br><span style="color:red">Accordions</span><br><span style="color:blue">Dynamic Container</span><br><span style="color:blue">Expand/Collapse Bar</span><br><span style="color:green">Repeat Tabs</div></div>',
-							'<div style="margin:10px; line-height: 20px;"><span style="color:blue">Grid<br>Repeat Column<br>Repeat Row<br>Trees<br>Tree Grid</span></div>',
-							'<div style="margin:10px;v"><span style="color:green">Text Input<br>Datetime<br>Icon<br>Button<br>Auto Complete<br>Checkbox<br>Dynamic Select<br>Prompt Select</span><br><span style="color:red">Smart Info</span><br><span style="color:blue">Events & Behaviours</span></div>',
-							'<div style="margin:10px; line-height: 20px;"><span style="color:blue">Menus<br>Smart Info<br>Search Gadget</span>'
-							]);
-							hbar.Set('chart.tooltips.event', 'onmousemove');
-							hbar.Set('chart.xmax', '100');
-							hbar.Set('chart.units.post', '%');
-							hbar.Set('chart.shadow', 'true');
-							hbar.Set('chart.gutter.left', 180);
-							hbar.Set('chart.background.grid', false);
-							hbar.Set('chart.colors.sequential', true);
-							hbar.Set('chart.colors', ['#93BBF4', '#006CFF', '#FF6600', '#34A038', '#945D59', '#FCD209', '#FCD209']);
-							hbar.Draw();
-
-							var hbar = new RGraph.HBar('cvs1', [75,70,70]);
-							hbar.Set('chart.labels', ['List Views','Summary Views','Report Definition']);
-							hbar.Set('chart.tooltips', [
-							'<div style="margin:10px; line-height: 20px; color:blue;">List Views</div>',
-							'<div style="margin:10px; line-height: 20px; color:blue;">Summary Views</div>',
-							'<div style="margin:10px; line-height: 20px; color:blue;">Report Definition</div>']);
-							hbar.Set('chart.tooltips.event', 'onmousemove');
-							hbar.Set('chart.xmax', '100');
-							hbar.Set('chart.units.post', '%');
-							hbar.Set('chart.shadow', 'true');
-							hbar.Set('chart.gutter.left', 180);
-							hbar.Set('chart.background.grid', false);
-							hbar.Set('chart.colors.sequential', true);
-							hbar.Set('chart.colors', ['#FF6600', '#34A038', '#945D59', '#FCD209']);
-							hbar.Draw();
-							
-							var hbar = new RGraph.HBar('cvs2', [30,10,10,10]);
-							hbar.Set('chart.labels', ['Harnesses','Special Harnesses','Portals','Flow Actions']);
-							hbar.Set('chart.tooltips', [
-							'<div style="margin:10px; line-height: 20px; color:blue;">New<br>Perform<br>Review<br>Confirm<br>History & Actions<br>Where am I</div>',
-							'<div style="margin:10px; line-height: 20px; color:blue;">Tabbed Screen Flow<br>Perform Screen Flow<br>List Navigation</div>',
-							'<div style="margin:10px; line-height: 20px; color:blue;">User Portal<br>Manager Portal<br>Case Manager Portal</div>',
-							'<div style="margin:10px; line-height: 20px; color:blue;">Case Gallery<br>New application created using app express<br>Pega Sample Application</div>']);							
-							hbar.Set('chart.tooltips.event', 'onmousemove');
-							hbar.Set('chart.xmax', '100');
-							hbar.Set('chart.units.post', '%');
-							hbar.Set('chart.shadow', 'true');
-							hbar.Set('chart.gutter.left', 180);
-							hbar.Set('chart.background.grid', false);
-							hbar.Set('chart.colors.sequential', true);
-							hbar.Set('chart.colors', ['#93BBF4', '#006CFF', '#FF6600', '#34A038', '#945D59', '#FCD209']);
-							hbar.Draw();
-						}
-					</script>
-			
 			<section style="display: block; " class="future">
 				<h2>Teams</h2>
 				<div class="sectionDiv">
-					<img style=";border: none; height:120px;" src="img/nimbus.png"><br>
-					<img style=";border: none; height:120px; margin-right:50px;" src="img/pixelperfect.png"><img style=";border: none; height:120px;" src="img/busybis.png"><br>
-					<img style=";border: none; height:120px; margin-right:50px;" src="img/webwiz.png"><img style=";border: none; height:120px; margin-right:50px;" src="img/autobots.png"><img style=";border: none; height:120px; margin-right:50px;" src="img/casemanagement.png"><img style=";border: none; height:120px;" src="img/integration.png">
+					<div class="tooltip" style=";border: none;width:120px;height:120px;background: url(img/nimbus.png);background-size:120px 120px;background-repeat:no-repeat;">
+						<span>
+						<ul>
+							<li>Infrastructure for Standards mode.</li>
+							<li>Infrastructure for Legacy mode.</li>
+							<li>Layouts</li>
+							<li>Tabs (Section/Container/Repeat)</li>
+							<li>Navigation Rules</li>
+							<li>RTE</li>
+							<li>Spell Checker</li>
+							<li>Modal Dialog</li>
+							<li>Panelsets</li>
+							<li>Harnesses (Infrastructure, Resizing etc)</li>
+							<li>OOTB Flow Actions</li>
+							<li>Non-auto generated controls.</li>
+							<li>ActionArea</li>
+							<li>Accordions</li>
+						</ul>
+						</span>
+					</div>
+					<br>
+					<div class="tooltip" style=";border: none;width:120px;height:120px;background: url(img/pixelperfect.png);background-size:120px 120px;background-repeat:no-repeat;">
+						<span>
+						<ul>
+							<li>Grid</li>
+							<li>Tree</li>
+							<li>Tree Grid</li>
+							<li>Row Repeat</li>
+							<li>Column Repeat</li>
+						</ul>
+						</span>
+					</div>		
+					<div class="tooltip" style=";border: none;width:120px;height:120px;background: url(img/busybis.png);background-size:120px 120px;background-repeat:no-repeat;">
+						<span>
+						<ul>
+							<li>List View</li>
+							<li>Summary View</li>
+							<li>Report Definition</li>
+							<li>Report Viewer</li>
+							<li>Flex Chart Controls</li>
+						</ul>
+						</span>
+					</div>
+					<br>
+					<div class="tooltip" style=";border: none;width:120px;height:120px;background: url(img/webwiz.png);background-size:120px 120px;background-repeat:no-repeat;">
+						<span>
+						<ul>
+							<li>Work Area / Dynamic Containers</li>
+							<li>Tab Scroller</li>
+						</ul>
+						</span>
+					</div>
+					<div class="tooltip" style=";border: none;width:120px;height:120px;background: url(img/autobots.png);background-size:120px 120px;background-repeat:no-repeat;">
+						<span>
+						<ul>
+							<li>Auto-generated Controls (Smart Info rewrite ?)</li>
+						</ul>
+						</span>
+					</div>
+					<div class="tooltip" style=";border: none;width:120px;height:120px;background: url(img/casemanagement.png);background-size:120px 120px;background-repeat:no-repeat;">
+						<span>
+						<ul>
+							<li>Case Designer</li>
+							<li>Case Manager Portal</li>
+						</ul>
+						</span>
+					</div>					
+					<div class="tooltip" style=";border: none;width:120px;height:120px;background: url(img/integration.png);background-size:120px 120px;background-repeat:no-repeat;">
+						<span>
+						<ul>
+							<li>All Supported IAC functionality</li>
+							<li>Some of the OOTB UI</li>
+						</ul>
+						</span>
+					</div>
+				</div>
+			</section>
+			
+			<section style="display: none; " class="future">
+				<h2>Epics & Teams</h2>
+				
+				<div class="sectionDiv">
+					<table class="smallFont">
+						<tr><td><span class="blueText">EPIC-1397</span>&nbsp;: </td><td>Reporting UI changes to support standards mode</td><td><span class="blueText">Bisy Bis</span></td></tr>
+						<tr><td><span class="blueText">EPIC- 956</span>&nbsp;&nbsp;: </td><td>Introduce "DocType" Tag Rendering for Standards Mode Compliance</td><td><span class="blueText">Nimbus</td></tr>
+						<tr><td><span class="blueText">EPIC-1310</span>&nbsp;: </td><td>Auto Generated controls to work in Standards mode</td><td><span class="blueText">Autobots</span></td></tr>
+						<tr><td><span class="blueText">EPIC-1311</span>&nbsp;: </td><td>Grids/ Tree/ Tree Grid to render in Standards mode</td><td><span class="blueText">Pixel Perfect</span></td></tr>
+						<tr><td><span class="blueText">EPIC-1312</span>&nbsp;: </td><td>Standards mode to become the default</td><td><span class="blueText">Nimbus</span></td></tr>
+						<tr><td><span class="blueText">EPIC-1313</span>&nbsp;: </td><td>Layouts & Containers to render in Standards mode</td><td><span class="blueText">Webwiz & Nimbus</span></td></tr>
+						<tr><td><span class="blueText">EPIC-1314</span>&nbsp;: </td><td>OOTB HTML property & Flow actions in Standards mode</td><td><span class="blueText">IAC & Nimbus</span></td></tr>
+						<tr><td><span class="blueText">EPIC-1316</span>&nbsp;: </td><td>Developer portal UI to render in Standards mode</td><td><span class="blueText">Nimbus</span></td></tr>
+						<tr><td><span class="blueText">EPIC-1866</span>&nbsp;: </td><td>Case Management Portal to render in Standards mode</td><td><span class="blueText">Case Management</span></td></tr>
+					</table>
 				</div>
 			</section>
 			<section class="fullPage future" style="display: none; ">
@@ -546,11 +699,17 @@ span.unknownchar{}
 			</section>				
 			<section class="fullPage future" style="display: none; ">
 					<img style=";border: none;" src="img/HTML5Future.png">
+			</section>
+			<section style="display: block; " class="future">
+				<h1 style="margin-top:70px">Questions</h1>
+				<br><br>
+				<h1 class="inverted">?</h1>
 			</section>			
 			<section style="display: block; " class="future">
 				<h1 style="margin-top:70px">Thank You</h1>
-				<br><br><br><br>
-				<h3 class="inverted"> By Sapna Grover</h3>
+				<br>
+				<h3 class="inverted"> Sapna Grover</h3>
+				<h3 class="inverted"> Shyam Agarwal</h3>
 			</section>
 			</div>
 
