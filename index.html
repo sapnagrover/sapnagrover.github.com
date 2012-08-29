@@ -100,11 +100,21 @@ z-index: 100 !important;
 .smallFont {
 	width: 100%;
 	padding: 40px;
+	padding-top: 20px;
+}
+
+.smallFont tr {
+	height: 30px;
 }
 
 .blueText {
 	color: #0055AB;
 }
+
+.reveal ul.links a:not(.image):hover {
+	cursor: auto !important;
+}
+
 </style>	
 	<script type="text/javascript" src="js/reveal.js"></script>
 	<script>
@@ -208,7 +218,7 @@ addEvent(window, 'click', function (event) {
 							hbar.Set('chart.colors', ['#FF6600', '#34A038', '#945D59']);
 							hbar.Draw();
 							
-							var hbar = new RGraph.HBar('cvs2', [10,10,10]);
+							var hbar = new RGraph.HBar('cvs2', [10,10,55]);
 							hbar.Set('chart.labels', ['Special Harnesses','Portals','Flow Actions']);
 							hbar.Set('chart.tooltips', ['<div style="margin:10px; line-height: 20px; color:blue;">Tabbed Screen Flow<br>Perform Screen Flow<br>List Navigation</div>', '<div style="margin:10px; line-height: 20px; color:blue;">User Portal<br>Manager Portal<br>Case Manager Portal</div>', '<div style="margin:10px; line-height: 20px; color:blue;">Case Gallery<br>New application created using app express<br>Pega Sample Application</div>']);
 							hbar.Set('chart.tooltips.event', 'onmousemove');
@@ -288,7 +298,7 @@ span.unknownchar{}
 			<section style="display: none; " class="future">
 				<h2>Why HTML5 ?</h2>
 				<div class="sectionDiv">
-					<ul>
+					<ul class="links">
 						<li>
 							Evolution of Web: <a href="http://www.evolutionoftheweb.com/" class="roll">http://www.evolutionoftheweb.com/</a>
 						</li>
