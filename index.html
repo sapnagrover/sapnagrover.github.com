@@ -546,44 +546,49 @@ span.unknownchar{}
 				<h2>PRPC in Standards Mode - How ?</h2>
 				<div class="sectionDiv">
 					<div style="text-align: left; margin-left: 30px;">IE6 standards <span style="color:red">!=</span> IE7 standards <span style="color:red">!=</span> IE8 standards <span style="color:red">!=</span> IE9 standards <span style="color:red">~=</span> FF and chrome standards.</div><br>
-					<div style="text-align: left; margin-left: 30px;">PRPC screens will :</div>
+					<div style="text-align: left; margin-left: 30px;">PRPC screens will</div>
 					<ul>
 						<li>Work in quirks mode in IE6 and IE7</li>
 						<li>Support Standards mode in IE versions <span style="font-weight:bold;">>= 8</span> and other browsers</li>
 					</ul><br>
-					<br><div style="text-align: left; margin-left: 30px;">Auto generated UI works in Standards & Quirks Mode</div>
-					<div style="text-align: left; margin-left: 30px;">Converting OOTB UI to render in Standards mode.</div>
+
 				</div>
 			</section>
 
 			<section style="display: none; " class="future">
 				<h2>PRPC in Standards Mode - How ?</h2>
 				<div class="sectionDiv">
-					<div style="text-align: left; margin-left: 30px;">What about backward compatibility ?</div>
-					<ul style="float: left;margin-left: 30px;">
-						<li>Introduced a switch
-							<ul>
+					<div style="text-align: left; margin-left: 30px;">What about backward compatibility ? - Introduced a switch.</div>
+					<ul style="display: block;margin-left: 30px;">
 								<li>Application level switch</li>
 								<li>Harness level switch</li>
-							</ul>
-						</li>
-					</ul><br>
+					</ul>
 					<img style=";border: none; margin-top:10px;height: 200px;" src="img/doctypeenable.png">
+					<br><br>
 				<a href="https://mesh.pega.com/community/projects/prpc/userinterface/projects/web-standards-adoption" style="text-align: left; margin-left: 5px; font-size: 14pt;">https://mesh.pega.com/community/projects/prpc/userinterface/projects/web-standards-adoption</a>
 				</div>
 			</section>
-
 			<section style="display: none; " class="future">
-				<h2>Goal for PRPC UI</h2>
+				<h2>Let the browser do its job</h2>
+				
+				<div class="sectionDiv">
+				<ul style="display: block">
+					<li style="text-align: left; margin-left: 30px;">No JS implementation for Modal dialog.</li><br>
+					<li style="text-align: left; margin-left: 30px;">No JS implementation for button bar</li><br>
+					<li style="text-align: left; margin-left: 30px;">No JS sizing for dynamic container</li>
+				</ul>
+
+			</section>
+			<section style="display: none; " class="future">
+				<h2>End result..</h2>
 				
 				<div class="sectionDiv">
 				<ul>
-					<li style="text-align: left; margin-left: 30px;">New application which is built using 7.1 renders in Standards mode and the end user doesn't have to worry about Standards & Quirks mode.</li>
-					<li style="text-align: left; margin-left: 30px;">Existing application which is built in 6.2 using all auto generated components & 100% guardrails complaint should upgrade and works in Standards mode with same look & feel, behaviour and without any backward compatibility issues.</li>
-					<li style="text-align: left; margin-left: 30px;">An application which is not 100% guardrails compliant we provide</li>
+					<li style="text-align: left; margin-left: 30px;">Applications built using 7.1 renders in Standards mode.</li><br>
+					<li style="text-align: left; margin-left: 30px;">Existing applications which are 100% guardrails complaint should upgrade to standards mode and should work seamlessly.</li><br>
+					<li style="text-align: left; margin-left: 30px;">For applications which are not 100% guardrails compliant we provide</li>
 					<ul style="float: left;margin-left: 30px;">
-						<li>means for it to upgrade to Standards mode.</li>
-						<li>publish a set of known issues that are common to quirks mode and the corresponding fixes.</li>
+						<li>Tools and Documentation.</li>
 					</ul>
 				</ul>
 
