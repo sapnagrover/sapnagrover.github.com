@@ -195,9 +195,11 @@ addEvent(window, 'click', function (event) {
 					<script>
 						window.onload = function ()
 						{
-							var hbar = new RGraph.HBar('cvs', [65,60,65,65,90,30]);
+							var hbar = new RGraph.HBar('cvs', [90,60,65,65,90,30]);
 							hbar.Set('chart.labels', ['Harness Infrastructure','Layouts','Containers','Grids','Controls','Non Auto Generated Controls']);
-							hbar.Set('chart.tooltips', ['<div style="margin:10px; color:blue; line-height: 20px;">Ajax<br>CSS<br>Basic JS</div>', '<div style="margin:10px; color:blue; line-height: 20px;">Smart Layouts<br>Percentage px<br>px fixed<br>Free form</div>', '<div style="margin:10px; line-height: 20px;"><span style="color:green">Tabs</span><br><span style="color:red">Accordions</span><br><span style="color:blue">Dynamic Container</span><br><span style="color:blue">Expand/Collapse Bar</span><br><span style="color:green">Repeat Tabs</div></div>',	'<div style="margin:10px; line-height: 20px;"><span style="color:blue">Grid<br>Repeat Column<br>Repeat Row<br>Trees<br>Tree Grid</span></div>',	'<div style="margin:10px;v"><span style="color:green">Text Input<br>Datetime<br>Icon<br>Button<br>Auto Complete<br>Checkbox<br>Dynamic Select<br>Prompt Select</span><br><span style="color:red">Smart Info</span><br><span style="color:blue">Events & Behaviours</span></div>', '<div style="margin:10px; line-height: 20px;"><span style="color:blue">Menus<br>Smart Info<br>Search Gadget</span>']);
+							hbar.Set('chart.tooltips', ['<div style="margin:10px; color:green; line-height: 20px;">Ajax<br>CSS<br>Basic JS<br>Harness Resize<br>Button bars<br>Legacy mode css support<br><span style="color:red">Miscellaneous Bugs</span></div>', 
+							'<div style="margin:10px; color:green; line-height: 20px;">Free form<br><span style="color:red">Smart Layouts</span><br>Percentage<br><span style="color:red">px fixed</span></div>', 
+							'<div style="margin:10px; line-height: 20px;"><span style="color:green">Tabs</span><br><span style="color:green">Accordions</span><br><span style="color:red">Dynamic Container</span><br><span style="color:red">Expand/Collapse Bar</span><br><span style="color:green">Repeat Tabs</div></div>',	'<div style="margin:10px; line-height: 20px;"><span style="color:green">Grid</span><br><span style="color:red">Repeat Column<br>Repeat Row</span><br><span style="color:green">Trees</span><br><span style="color:green">Tree Grid</span><br><span style="color:red">Feature : Row & Column resizing in grids</span><br><span style="color:red">Feature : Work object bound grids</span></div>',	'<div style="margin:10px;v"><span style="color:green">Text Input<br>Datetime<br>Icon<br>Button<br>Auto Complete<br>Checkbox<br>Dynamic Select<br>Prompt Select</span><br><span style="color:red">Smart Info</span><br><span style="color:red">Pop over</span><br><span style="color:green">Events & Behaviours</span></div>', '<div style="margin:10px; line-height: 20px;"><span style="color:green">Menus<br><span style="color:red">Smart Info</span><br><span style="color:red">RTE</span><br><span style="color:red">Spell checker</span><br><span style="color:red">Search Gadget</span>']);
 							hbar.Set('chart.tooltips.event', 'onmousemove');
 							hbar.Set('chart.tooltips.effect', 'expand');
 							hbar.Set('chart.xmax', '100');
@@ -211,7 +213,7 @@ addEvent(window, 'click', function (event) {
 
 							var hbar = new RGraph.HBar('cvs1', [75,70,70]);
 							hbar.Set('chart.labels', ['List Views','Summary Views','Report Definition']);
-							hbar.Set('chart.tooltips', ['<div style="margin:10px; line-height: 20px; color:blue;">List Views</div>','<div style="margin:10px; line-height: 20px; color:blue;">Summary Views</div>',	'<div style="margin:10px; line-height: 20px; color:blue;">Report Definition</div>']);
+							hbar.Set('chart.tooltips', ['<div style="margin:10px; line-height: 20px; color:red;">List Views</div>','<div style="margin:10px; line-height: 20px; color:red;">Summary Views</div>',	'<div style="margin:10px; line-height: 20px; color:red;">Report Definition</div>']);
 							hbar.Set('chart.tooltips.event', 'onmousemove');
 							hbar.Set('chart.tooltips.effect', 'expand');
 							hbar.Set('chart.xmax', '100');
@@ -225,7 +227,7 @@ addEvent(window, 'click', function (event) {
 							
 							var hbar = new RGraph.HBar('cvs2', [10,10,55]);
 							hbar.Set('chart.labels', ['Special Harnesses','Portals','Flow Actions']);
-							hbar.Set('chart.tooltips', ['<div style="margin:10px; line-height: 20px; color:blue;">Tabbed Screen Flow<br>Perform Screen Flow<br>List Navigation</div>', '<div style="margin:10px; line-height: 20px; color:blue;">User Portal<br>Manager Portal<br>Case Manager Portal</div>', '<div style="margin:10px; line-height: 20px; color:blue;">Case Gallery<br>New application created using app express<br>Pega Sample Application</div>']);
+							hbar.Set('chart.tooltips', ['<div style="margin:10px; line-height: 20px; color:red;">Tabbed Screen Flow<br>Perform Screen Flow<br>List Navigation</div>', '<div style="margin:10px; line-height: 20px; color:red;">User Portal<br>Manager Portal<br>Case Manager Portal</div>', '<div style="margin:10px; line-height: 20px; color:red;">Case Gallery<br>New application created using app express<br><span style="color:green">Pega Sample Application</span></div>']);
 							hbar.Set('chart.tooltips.event', 'onmousemove');
 							hbar.Set('chart.tooltips.effect', 'expand');
 							hbar.Set('chart.xmax', '100');
