@@ -426,8 +426,7 @@ body {
 	background-image: url("../img/html5logo.png"), url("../img/PegaLogo.png"), url("../img/footer.png");
 	background-origin: padding-box, padding-box, padding-box;
 	background-repeat: no-repeat;
-	background-position-y: 480px,480px,510px;
-	background-position-x: 25px, 800px, 270px;
+	background-position: 25px 480px, 800px 480px, 270px 510px;
 
 	border-radius: 10px 10px 10px 10px; 
 	-moz-border-radius: 10px 10px 10px 10px; 
